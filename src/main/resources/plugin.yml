@@ -1,0 +1,4 @@
+name: ItemForge
+version: '${version}'
+main: dev.vxrp.itemforge.ItemForge
+api-version: '1.20'
