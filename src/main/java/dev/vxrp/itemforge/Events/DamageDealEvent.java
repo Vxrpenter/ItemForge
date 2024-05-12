@@ -40,7 +40,7 @@ public class DamageDealEvent implements Listener {
 
 
             if (percent <= statePercentI) {
-                damage = event.getDamage() - event.getDamage()*plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_III_REDUCED_DAMAGE)/100;
+                damage = event.getDamage() - event.getDamage()*plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_I_REDUCED_DAMAGE)/100;
                 event.setDamage(damage);
                 player.sendMessage(Component
                         .text("--- State 1 |" + percent + " ---", NamedTextColor.RED));
@@ -54,7 +54,7 @@ public class DamageDealEvent implements Listener {
                 player.sendMessage(String.valueOf(damage));
             }
             if (percent <= statePercentIII && percent > statePercentII || percent > statePercentIII) {
-                damage = event.getDamage() - event.getDamage()*plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_I_REDUCED_DAMAGE)/100;
+                damage = event.getDamage() - event.getDamage()*plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_III_REDUCED_DAMAGE)/100;
                 event.setDamage(damage);
                 player.sendMessage(Component
                         .text("--- State 3 |" + percent +  " ---", NamedTextColor.RED));
