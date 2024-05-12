@@ -1,4 +1,4 @@
-package dev.vxrp.itemforge.commands.development;
+package dev.vxrp.itemforge.commands.debugging;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
