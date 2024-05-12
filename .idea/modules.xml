@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ItemForge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ItemForge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ItemForge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ItemForge.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dev.vxrp.ItemForge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dev.vxrp.ItemForge.main.iml" />
     </modules>
   </component>

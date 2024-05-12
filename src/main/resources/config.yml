@@ -1,0 +1,14 @@
+#States the damage an item does, depending on its durability.
+#It works like this: The calculation starts at 0%, then the first state ends, for example at 20%
+#and so on
+#~ All values represent ' % ' of MaxHp/Damage
+percent_item_damaged:
+  damaged_state_I:
+    percent: 20
+    reduced_damage: 20
+  damaged_state_II:
+    percent: 50
+    reduced_damage: 30
+  damaged_state_III:
+    percent: 80
+    reduced_damage: 40
