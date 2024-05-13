@@ -1,3 +1,7 @@
+#                   ______  _     _  ______ _______ ______  _____        _____ _______ __   __
+#                   |     \ |     | |_____/ |_____| |_____]   |   |        |      |      \_/
+#                   |_____/ |_____| |    \_ |     | |_____] __|__ |_____ __|__    |       |
+
 #States the damage an item does, depending on its durability.
 #It works like this: The calculation starts at 0%, then the first state ends, for example at 20%
 #and so on
@@ -12,3 +16,12 @@ percent_item_damaged:
   damaged_state_III:
     percent: 80
     reduced_damage: 40
+
+#       ______ _______ __   _ ______   _____  _______      _______ _______ _______ _______ _______ _______ _______
+#       |_____/ |_____| | \  | |     \ |     | |  |  |      |______ |______ |______ |______ |          |    |______
+#       |    \_ |     | |  \_| |_____/ |_____| |  |  |      |______ |       |       |______ |_____     |    ______|
+
+activate_random_effects: true
+random_effects:
+  - POISON
+  - WITHER
