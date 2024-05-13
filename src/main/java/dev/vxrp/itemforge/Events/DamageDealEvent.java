@@ -30,13 +30,11 @@ public class DamageDealEvent implements Listener {
             //Durability
             ItemStack item = player.getInventory().getItemInMainHand();
             Damageable damageable = (Damageable) item.getItemMeta();
-            double durability = damageable.getDamage();
-            double percent = durability/item.getType().getMaxDurability() * 100;
+            double percent = (double) damageable.getDamage()/item.getType().getMaxDurability() * 100;
 
             double statePercentI = plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_I_PERCENT);
             double statePercentII = plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_II_PERCENT);
             double statePercentIII = plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_III_PERCENT);
-
 
 
             if (percent <= statePercentI) {
@@ -54,7 +52,6 @@ public class DamageDealEvent implements Listener {
         } else {
             damage = ThreadLocalRandom.current().nextDouble(1.0, 2.0);
             event.setDamage(damage);
-            player.sendMessage(Component.text(damage));
         }
     }
 }

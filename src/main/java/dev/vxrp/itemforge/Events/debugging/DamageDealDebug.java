@@ -31,8 +31,7 @@ public class DamageDealDebug implements Listener {
             //Durability
             ItemStack item = player.getInventory().getItemInMainHand();
             Damageable damageable = (Damageable) item.getItemMeta();
-            double durability = damageable.getDamage();
-            double percent = durability/item.getType().getMaxDurability() * 100;
+            double percent = (double) damageable.getDamage() /item.getType().getMaxDurability() * 100;
 
             double statePercentI = plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_I_PERCENT);
             double statePercentII = plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_II_PERCENT);

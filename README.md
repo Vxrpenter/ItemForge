@@ -45,4 +45,4 @@ There are currently two different commands that help with debugging,
 | setitemdurability  | none           | pretty self explanatory (if no number is put in shows you the items current durability) |
 
 > [!IMPORTANT]
-> This is still a alpha if not a pre-alpha, so don't expect too much yet
+> This is still a alpha if not a pre-alpha, so don't expect too much
