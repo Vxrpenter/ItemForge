@@ -4,5 +4,6 @@ main: dev.vxrp.itemforge.ItemForge
 api-version: '1.20'
 commands:
   setdurability:
+    permission: 'itemforge.debug.setitemdurability'
   debuginfo:
     permission: 'itemforge.debug.show_damage_info'
