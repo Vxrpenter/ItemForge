@@ -39,10 +39,10 @@ percent_item_damaged:
 There are currently two different commands that help with debugging,
 `/debuginfo` and `setitemdurability`.
 
-| command            | args           | Features                                                                                |
-|--------------------|----------------|-----------------------------------------------------------------------------------------|
-| debuginfo          | show_damage_info | shows you various information like your current damage                                  |
-| setitemdurability  | none           | pretty self explanatory (if no number is put in shows you the items current durability) |
+| command           | args             | Features                                                                                |
+|-------------------|------------------|-----------------------------------------------------------------------------------------|
+| debuginfo         | show_damage_info | shows you various information like your current damage                                  |
+| setitemdurability | none             | pretty self explanatory (if no number is put in shows you the items current durability) |
 
 > [!IMPORTANT]
-> This is still a alpha if not a pre-alpha, so don't expect too much
+> This is still an alpha if not a pre-alpha, so don't expect too much

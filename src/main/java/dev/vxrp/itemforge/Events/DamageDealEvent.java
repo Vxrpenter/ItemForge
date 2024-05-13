@@ -2,8 +2,6 @@ package dev.vxrp.itemforge.Events;
 
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.CONFIG;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.entity.EntityType;
@@ -47,7 +45,7 @@ public class DamageDealEvent implements Listener {
             }
             if (percent <= statePercentIII && percent > statePercentII || percent > statePercentIII) {
                 damage = event.getDamage() - event.getDamage()*plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_III_REDUCED_DAMAGE)/100;
-                event.setDamage(damage);;
+                event.setDamage(damage);
             }
         } else {
             damage = ThreadLocalRandom.current().nextDouble(1.0, 2.0);
