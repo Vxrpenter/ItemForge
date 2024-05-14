@@ -1,8 +1,10 @@
 # About
 
 ## What is ItemForge
-ItemForge is a complete overhaul of minecraft combat system. Or something like this, because rn this
-is still an Alpha. With this plugin I wanted to alter the way players fight, add some randomness
+ItemForge is a complete overhaul of a minecraft combat system.
+Or something like this, because rn this
+is still an alpha version.
+With this plugin, I wanted to alter the way players fight, add some randomness
 and overall make combat more interesting.
 
 ## TODO LIST
@@ -14,7 +16,8 @@ and overall make combat more interesting.
 
 ## Damage Calculation
 Currently, the damage done by weapons is only manipulated by its durability.
-If there is, for example, only 20% left the damage will be reduced by 40%. This calculation is actually
+If there is, for example, only 20% left, the damage will be reduced by 40%.
+This calculation is actually
 fully customizable in the `config.yml`
 
 ### Current Config
