@@ -12,7 +12,8 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import java.util.Objects;
+
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class DamageDealEvent implements Listener {
@@ -36,7 +37,6 @@ public class DamageDealEvent implements Listener {
             double statePercentII = plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_II_PERCENT);
             double statePercentIII = plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_III_PERCENT);
 
-
             if (percent <= statePercentI) {
                 damage = event.getDamage() - event.getDamage()*plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_I_REDUCED_DAMAGE)/100;
                 event.setDamage(damage);
@@ -49,20 +49,22 @@ public class DamageDealEvent implements Listener {
                 damage = event.getDamage() - event.getDamage()*plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_III_REDUCED_DAMAGE)/100;
                 event.setDamage(damage);
             }
-            //Effects
+            //Effects (Experimental)
             if (plugin.getConfig().getBoolean(CONFIG.EFFECTS.ACTIVATE_RANDOM_EFFECTS)) {
                 if (event.getEntity().getType() == EntityType.PLAYER) {
                     Player victim = (Player) event.getEntity();
+                    List<PotionEffectType> typeList = new ArrayList<>();
 
-                    int random = ThreadLocalRandom.current().nextInt(1,
-                            Objects.requireNonNull(plugin.getConfig().getList(CONFIG.EFFECTS.RANDOM_EFFECTS)).size() + 1);
-                    int duration = ThreadLocalRandom.current().nextInt(plugin.getConfig().getInt(CONFIG.EFFECTS.DURATION_VALUE_I),
-                            plugin.getConfig().getInt(CONFIG.EFFECTS.DURATION_VALUE_II) + 1);
+                    for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.EFFECTS.RANDOM_EFFECTS)).size(); i++) {
+                        typeList.add((PotionEffectType) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.EFFECTS.RANDOM_EFFECTS)).get(i));
+                    }
+
+                    int index = (int)(Math.random() * typeList.size());
+                    PotionEffectType effectType = typeList.get(index);
+                    int duration = ThreadLocalRandom.current().nextInt(plugin.getConfig().getInt(CONFIG.EFFECTS.DURATION_VALUE_I), plugin.getConfig().getInt(CONFIG.EFFECTS.DURATION_VALUE_II) + 1);
                     int amplifier = ThreadLocalRandom.current().nextInt(1, plugin.getConfig().getInt(CONFIG.EFFECTS.AMPLIFIER_MAX) + 1);
 
-                    victim.addPotionEffect(new PotionEffect((PotionEffectType)
-                            Objects.requireNonNull(plugin.getConfig().getList(CONFIG.EFFECTS.RANDOM_EFFECTS)).get(random),
-                            duration,amplifier, true, false));
+                    victim.addPotionEffect(new PotionEffect(effectType, duration, amplifier, false, false));
                 }
             }
         } else {
