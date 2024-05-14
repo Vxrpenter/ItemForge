@@ -3,6 +3,8 @@ package dev.vxrp.itemforge.Events;
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.CONFIG;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.Registry;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -53,14 +55,13 @@ public class DamageDealEvent implements Listener {
             if (plugin.getConfig().getBoolean(CONFIG.EFFECTS.ACTIVATE_RANDOM_EFFECTS)) {
                 if (event.getEntity().getType() == EntityType.PLAYER) {
                     Player victim = (Player) event.getEntity();
-                    List<PotionEffectType> typeList = new ArrayList<>();
-
+                    List<String> typeList = new ArrayList<>();
                     for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.EFFECTS.RANDOM_EFFECTS)).size(); i++) {
-                        typeList.add((PotionEffectType) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.EFFECTS.RANDOM_EFFECTS)).get(i));
+                        typeList.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.EFFECTS.RANDOM_EFFECTS)).get(i));
                     }
 
                     int index = (int)(Math.random() * typeList.size());
-                    PotionEffectType effectType = typeList.get(index);
+                    PotionEffectType effectType = Registry.POTION_EFFECT_TYPE.get(Objects.requireNonNull(NamespacedKey.fromString(typeList.get(index))));
                     int duration = ThreadLocalRandom.current().nextInt(plugin.getConfig().getInt(CONFIG.EFFECTS.DURATION_VALUE_I), plugin.getConfig().getInt(CONFIG.EFFECTS.DURATION_VALUE_II) + 1);
                     int amplifier = ThreadLocalRandom.current().nextInt(1, plugin.getConfig().getInt(CONFIG.EFFECTS.AMPLIFIER_MAX) + 1);
 
