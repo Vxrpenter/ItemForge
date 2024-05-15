@@ -23,4 +23,10 @@ public final class CONFIG {
         //Amplifier
         public final static String AMPLIFIER_MAX = "effect_settings.amplifier.max";
     }
+    public final static class CRAFTING {
+        //Affected Weapons
+        public final static String AFFECTED_WEAPON_ITEMS = "affected_weapon_items";
+        //Affected Armor
+        public final static String AFFECTED_ARMOR_ITEMS = "affected_armor_items";
+    }
 }

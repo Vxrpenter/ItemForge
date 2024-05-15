@@ -21,7 +21,7 @@ percent_item_damaged:
 #       |_____/ |_____| | \  | |     \ |     | |  |  |      |______ |______ |______ |______ |          |    |______
 #       |    \_ |     | |  \_| |_____/ |_____| |  |  |      |______ |       |       |______ |_____     |    ______|
 
-#!!! Currently, in early development (not working at all) !!!
+#!!! Currently, in early development (Experimental) !!!
 activate_random_effects: true
 random_effects:
   - POISON
@@ -34,3 +34,14 @@ effect_settings:
   amplifier:
     max: 2
 
+#       _  _  _ _______ _______  _____   _____  __   _      _______  ______ _______ _______ _______ _____ __   _  ______
+#       |  |  | |______ |_____| |_____] |     | | \  |      |       |_____/ |_____| |______    |      |   | \  | |  ____
+#       |__|__| |______ |     | |       |_____| |  \_|      |_____  |    \_ |     | |          |    __|__ |  \_| |_____|
+
+affected_weapon_items: [ WOODEN_SWORD, STONE_SWORD, GOLDEN_SWORD, IRON_SWORD, DIAMOND_SWORD, NETHERITE_SWORD, WOODEN_AXE, STONE_AXE, GOLDEN_AXE, IRON_AXE, DIAMOND_AXE, NETHERITE_AXE ]
+
+#       _______  ______ _______  _____   ______      _______  ______ _______ _______ _______ _____ __   _  ______
+#       |_____| |_____/ |  |  | |     |  |_____/      |       |_____/ |_____| |______    |      |   | \  | |  ____
+#       |     | |    \_ |  |  | |_____|  |    \_      |_____  |    \_ |     | |          |    __|__ |  \_| |_____|
+
+affected_armor_items: [ LEATHER_HELMET, LEATHER_CHESTPLATE, LEATHER_LEGGINGS, LEATHER_BOOTS, GOLDEN_HELMET, GOLDEN_CHESTPLATE, GOLDEN_LEGGINGS, GOLDEN_BOOTS, IRON_HELMET, IRON_CHESTPLATE, IRON_LEGGINGS, IRON_BOOTS, DIAMOND_HELMET, DIAMOND_CHESTPLATE, DIAMOND_LEGGINGS, DIAMOND_BOOTS, NETHERITE_HELMET, NETHERITE_CHESTPLATE, NETHERITE_LEGGINGS, NETHERITE_BOOTS ]
