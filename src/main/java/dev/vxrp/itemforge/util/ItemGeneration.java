@@ -19,15 +19,6 @@ import java.util.Objects;
 public class ItemGeneration {
     public static ItemStack weapon(ItemForge plugin, Material material, Player player) {
         ItemStack item = new ItemStack(material);
-        ItemMeta itemMeta = item.getItemMeta();
-
-        if (plugin.getConfig().getBoolean(CONFIG.CRAFTING.SHOW_WEAPON_ITEM_CREATOR)) {
-            List<Component> lore = new ArrayList<>();
-            lore.add(MiniMessage.miniMessage().deserialize("<italic><gray>Created by - " + player.getName() + "<gray><italic>"));
-            itemMeta.lore(lore);
-        }
-        item.setItemMeta(itemMeta);
-
         if (plugin.getConfig().getBoolean(CONFIG.CRAFTING.SAVE_WEAPON_CREATOR_IN_NBT)) {
             NamespacedKey key = new NamespacedKey(plugin, "player");
             return new PersistentDataStorageUtil(item)

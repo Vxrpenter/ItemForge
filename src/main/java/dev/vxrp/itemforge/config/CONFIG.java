@@ -28,9 +28,6 @@ public final class CONFIG {
         public final static String AFFECTED_WEAPON_ITEMS = "affected_weapon_items";
         //Affected Armor
         public final static String AFFECTED_ARMOR_ITEMS = "affected_armor_items";
-        //Show Creator
-        public final static String SHOW_WEAPON_ITEM_CREATOR = "show_weapon_item_creator";
-        public final static String SHOW_ARMOR_ITEM_CREATOR = "show_armor_item_creator";
         //Save Creator in NBT
         public final static String SAVE_WEAPON_CREATOR_IN_NBT = "save_weapon_creator_in_nbt";
         public final static String SAVE_ARMOR_CREATOR_IN_NBT = "save_armor_creator_in_nbt";
