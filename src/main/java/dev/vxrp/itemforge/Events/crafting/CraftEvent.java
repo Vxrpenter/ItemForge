@@ -2,9 +2,7 @@ package dev.vxrp.itemforge.Events.crafting;
 
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.CONFIG;
-import dev.vxrp.itemforge.util.DataStorage.PersistentDataStorageUtil;
 import dev.vxrp.itemforge.util.ItemGeneration;
-import org.bukkit.NamespacedKey;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -41,16 +39,13 @@ public class CraftEvent implements Listener {
             if (listedArmorItems.contains(item.getType().toString())) {
                 //SetItem
                 for (HumanEntity he : event.getViewers()) {
-                    event.getInventory().setResult(ItemGeneration.weapon(item.getType(), (Player) he));
+                    event.getInventory().setResult(ItemGeneration.armor(plugin, item.getType(), (Player) he));
                 }
             }
         } else {
             //SetItem
             for (HumanEntity he : event.getViewers()) {
-                ItemStack storedData = new PersistentDataStorageUtil(ItemGeneration.weapon(item.getType(), (Player) he))
-                        .addUUID(new NamespacedKey(plugin, "player"), he.getUniqueId())
-                        .build();
-                event.getInventory().setResult(storedData);
+                event.getInventory().setResult(ItemGeneration.armor(plugin, item.getType(), (Player) he));
             }
         }
     }
