@@ -3,7 +3,6 @@ package dev.vxrp.itemforge.Events.crafting;
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.CONFIG;
 import dev.vxrp.itemforge.util.DataStorage.PersistentDataStorageUtil;
-import dev.vxrp.itemforge.util.DataStorage.UUIDPersistentDataType;
 import dev.vxrp.itemforge.util.ItemGeneration;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.HumanEntity;
@@ -12,14 +11,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.tags.ItemTagType;
-import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.UUID;
 
 public class CraftEvent implements Listener {
     private final ItemForge plugin;
@@ -58,9 +53,5 @@ public class CraftEvent implements Listener {
                 event.getInventory().setResult(storedData);
             }
         }
-
-
-
-
     }
 }

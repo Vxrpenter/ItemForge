@@ -2,8 +2,6 @@ package dev.vxrp.itemforge.Events;
 
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.CONFIG;
-import dev.vxrp.itemforge.util.DataStorage.PersistentDataStorageUtil;
-import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
