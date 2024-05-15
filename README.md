@@ -66,7 +66,6 @@ effect_settings:
 
 affected_weapon_items: [ WOODEN_SWORD, STONE_SWORD, GOLDEN_SWORD, IRON_SWORD, DIAMOND_SWORD, NETHERITE_SWORD, WOODEN_AXE, STONE_AXE, GOLDEN_AXE, IRON_AXE, DIAMOND_AXE,
                          NETHERITE_AXE ]
-show_weapon_item_creator: true
 save_weapon_creator_in_nbt: true
 
 #_______  ______ _______  _____   ______      _______  ______ _______ _______ _______ _____ __   _  ______
@@ -76,7 +75,6 @@ save_weapon_creator_in_nbt: true
 affected_armor_items: [ LEATHER_HELMET, LEATHER_CHESTPLATE, LEATHER_LEGGINGS, LEATHER_BOOTS, GOLDEN_HELMET, GOLDEN_CHESTPLATE, GOLDEN_LEGGINGS, GOLDEN_BOOTS, IRON_HELMET,
                         IRON_CHESTPLATE, IRON_LEGGINGS, IRON_BOOTS, DIAMOND_HELMET, DIAMOND_CHESTPLATE, DIAMOND_LEGGINGS, DIAMOND_BOOTS, NETHERITE_HELMET,
                         NETHERITE_CHESTPLATE, NETHERITE_LEGGINGS, NETHERITE_BOOTS, CHAINMAIL_HELMET, CHAINMAIL_CHESTPLATE, CHAINMAIL_LEGGINGS, CHAINMAIL_BOOTS ]
-show_armor_item_creator: true
 save_armor_creator_in_nbt: true
 
 # _______ _______ _______  ______ _____ ______  _     _ _______ _______ _______
