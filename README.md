@@ -22,8 +22,12 @@ fully customizable in the `config.yml`
 
 ### Current Config
 ```ruby
+#______  _     _  ______ _______ ______  _____        _____ _______ __   __
+#|     \ |     | |_____/ |_____| |_____]   |   |        |      |      \_/
+#|_____/ |_____| |    \_ |     | |_____] __|__ |_____ __|__    |       |
+
 #States the damage an item does, depending on its durability.
-#It works like this: The calculation starts at 0%, then the first state ends, for example at 20%
+#It works like this: The calculation starts at 0%, then the first state ends, for example, at 20%,
 #and so on
 #~ All values represent ' % ' of MaxHp/Damage
 percent_item_damaged:
@@ -36,6 +40,43 @@ percent_item_damaged:
   damaged_state_III:
     percent: 80
     reduced_damage: 40
+
+#______ _______ __   _ ______   _____  _______      _______ _______ _______ _______ _______ _______ _______
+#|_____/ |_____| | \  | |     \ |     | |  |  |      |______ |______ |______ |______ |          |    |______
+#|    \_ |     | |  \_| |_____/ |_____| |  |  |      |______ |       |       |______ |_____     |    ______|
+
+#!!! Currently, in early development (Experimental) !!!
+activate_random_effects: true
+random_effects:
+  - POISON
+  - WITHER
+
+effect_settings:
+  duration:
+    value_I: 1
+    value_II: 5
+  amplifier:
+    max: 2
+
+#_  _  _ _______ _______  _____   _____  __   _      _______  ______ _______ _______ _______ _____ __   _  ______
+#|  |  | |______ |_____| |_____] |     | | \  |      |       |_____/ |_____| |______    |      |   | \  | |  ____
+#|__|__| |______ |     | |       |_____| |  \_|      |_____  |    \_ |     | |          |    __|__ |  \_| |_____|
+
+affected_weapon_items: [ WOODEN_SWORD, STONE_SWORD, GOLDEN_SWORD, IRON_SWORD, DIAMOND_SWORD, NETHERITE_SWORD, WOODEN_AXE, STONE_AXE, GOLDEN_AXE, IRON_AXE, DIAMOND_AXE,
+                         NETHERITE_AXE ]
+show_weapon_item_creator: true
+save_weapon_creator_in_nbt: true
+
+#_______  ______ _______  _____   ______      _______  ______ _______ _______ _______ _____ __   _  ______
+#|_____| |_____/ |  |  | |     |  |_____/      |       |_____/ |_____| |______    |      |   | \  | |  ____
+#|     | |    \_ |  |  | |_____|  |    \_      |_____  |    \_ |     | |          |    __|__ |  \_| |_____|
+
+affected_armor_items: [ LEATHER_HELMET, LEATHER_CHESTPLATE, LEATHER_LEGGINGS, LEATHER_BOOTS, GOLDEN_HELMET, GOLDEN_CHESTPLATE, GOLDEN_LEGGINGS, GOLDEN_BOOTS, IRON_HELMET,
+                        IRON_CHESTPLATE, IRON_LEGGINGS, IRON_BOOTS, DIAMOND_HELMET, DIAMOND_CHESTPLATE, DIAMOND_LEGGINGS, DIAMOND_BOOTS, NETHERITE_HELMET,
+                        NETHERITE_CHESTPLATE, NETHERITE_LEGGINGS, NETHERITE_BOOTS ]
+show_armor_item_creator: true
+save_armor_creator_in_nbt: true
+
 ```
 
 ## Debug Features
