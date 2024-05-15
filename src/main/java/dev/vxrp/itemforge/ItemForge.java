@@ -20,7 +20,7 @@ public final class ItemForge extends JavaPlugin {
     }
 
     public void Commands() {
-        Objects.requireNonNull(getCommand("debuginfo")).setExecutor(new DebugInfo());
+        Objects.requireNonNull(getCommand("debuginfo")).setExecutor(new DebugInfo(this));
         Objects.requireNonNull(getCommand("setdurability")).setExecutor(new SetItemDurability());
     }
     public void Events() {

@@ -25,10 +25,6 @@ public class PersistentDataStorageUtil {
         return this;
     }
 
-    public UUID getStoredUUID(NamespacedKey key) {
-        return itemMeta.getPersistentDataContainer().get(key, persistentDataType);
-    }
-
     public ItemStack build() {
         return itemStack;
     }
