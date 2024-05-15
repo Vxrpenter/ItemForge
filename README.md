@@ -9,8 +9,10 @@ and overall make combat more interesting.
 
 ## TODO LIST
 - [x] Alter Damage Calculation
+- [ ] Crafting additions and changes
 - [ ] Smithing
 - [ ] New Weapons
+- [ ] Wiki
 
 # Already Existing Features
 
@@ -73,13 +75,42 @@ save_weapon_creator_in_nbt: true
 
 affected_armor_items: [ LEATHER_HELMET, LEATHER_CHESTPLATE, LEATHER_LEGGINGS, LEATHER_BOOTS, GOLDEN_HELMET, GOLDEN_CHESTPLATE, GOLDEN_LEGGINGS, GOLDEN_BOOTS, IRON_HELMET,
                         IRON_CHESTPLATE, IRON_LEGGINGS, IRON_BOOTS, DIAMOND_HELMET, DIAMOND_CHESTPLATE, DIAMOND_LEGGINGS, DIAMOND_BOOTS, NETHERITE_HELMET,
-                        NETHERITE_CHESTPLATE, NETHERITE_LEGGINGS, NETHERITE_BOOTS ]
+                        NETHERITE_CHESTPLATE, NETHERITE_LEGGINGS, NETHERITE_BOOTS, CHAINMAIL_HELMET, CHAINMAIL_CHESTPLATE, CHAINMAIL_LEGGINGS, CHAINMAIL_BOOTS ]
 show_armor_item_creator: true
 save_armor_creator_in_nbt: true
 
+# _______ _______ _______  ______ _____ ______  _     _ _______ _______ _______
+# |_____|    |       |    |_____/   |   |_____] |     |    |    |______ |______
+# |     |    |       |    |    \_ __|__ |_____] |_____|    |    |______ ______|
+
+armor_types:
+  leather_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.agility ]
+    negative_attributes: [ attribute.flamable ]
+  chainmail_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.gliding ]
+    negative_attributes: [ attribute.aHoleInTheWall ]
+  golden_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.pride ]
+    negative_attributes: [ attribute.soft ]
+  iron_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.hardShell ]
+    negative_attributes: [ attribute.slowing ]
+  diamond_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.pride, attribute.hardShell ]
+    negative_attributes: [ attribute.slowing ]
+  netherite_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.headShell, attribute.hotMetal ]
+    negative_attributes: [ attribute.slowing ]
 ```
 
-## Debug Features
+## Debugging Features
 There are currently two different commands that help with debugging,
 `/debuginfo` and `setitemdurability`.
 
