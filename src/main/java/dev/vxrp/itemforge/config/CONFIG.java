@@ -35,4 +35,27 @@ public final class CONFIG {
         public final static String SAVE_WEAPON_CREATOR_IN_NBT = "save_weapon_creator_in_nbt";
         public final static String SAVE_ARMOR_CREATOR_IN_NBT = "save_armor_creator_in_nbt";
     }
+    public final static class ATTRIBUTES {
+        //Positive Attributes
+        public final static String LEATHER_ARMOR_POSITIVE_ATTRIBUTES = "armor_types.leather_armor.positive_attributes";
+        public final static String CHAINMAIL_ARMOR_POSITIVE_ATTRIBUTES = "armor_types.chainmail_armor.positive_attributes";
+        public final static String GOLDEN_ARMOR_POSITIVE_ATTRIBUTES = "armor_types.golden_armor.positive_attributes";
+        public final static String IRON_ARMOR_POSITIVE_ATTRIBUTES = "armor_types.iron_armor.positive_attributes";
+        public final static String DIAMOND_ARMOR_POSITIVE_ATTRIBUTES = "armor_types.diamond_armor.positive_attributes";
+        public final static String NETHERITE_ARMOR_POSITIVE_ATTRIBUTES = "armor_types.netherite_armor.positive_attributes";
+        //Negative Attributes
+        public final static String LEATHER_ARMOR_NEGATIVE_ATTRIBUTES = "armor_types.leather_armor.negative_attributes";
+        public final static String CHAINMAIL_ARMOR_NEGATIVE_ATTRIBUTES = "armor_types.chainmail_armor.negative_attributes";
+        public final static String GOLDEN_ARMOR_NEGATIVE_ATTRIBUTES = "armor_types.golden_armor.negative_attributes";
+        public final static String IRON_ARMOR_NEGATIVE_ATTRIBUTES = "armor_types.iron_armor.negative_attributes";
+        public final static String DIAMOND_ARMOR_NEGATIVE_ATTRIBUTES = "armor_types.diamond_armor.negative_attributes";
+        public final static String NETHERITE_ARMOR_NEGATIVE_ATTRIBUTES = "armor_types.netherite_armor.negative_attributes";
+        //Apply Attributes
+        public final static String APPLY_LEATHER_ARMOR_ATTRIBUTES = "armor_types.leather_armor.apply_attributes";
+        public final static String APPLY_CHAINMAIL_ARMOR_ATTRIBUTES = "armor_types.chainmail_armor.apply_attributes";
+        public final static String APPLY_GOLDEN_ARMOR_ATTRIBUTES = "armor_types.golden_armor.apply_attributes";
+        public final static String APPLY_IRON_ARMOR_ATTRIBUTES = "armor_types.iron_armor.apply_attributes";
+        public final static String APPLY_DIAMOND_ARMOR_ATTRIBUTES = "armor_types.diamond_armor.apply_attributes";
+        public final static String APPLY_NETHERITE_ARMOR_ATTRIBUTES = "armor_types.netherite_armor.apply_attributes";
+    }
 }

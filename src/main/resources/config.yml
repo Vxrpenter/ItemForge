@@ -1,6 +1,6 @@
-#                   ______  _     _  ______ _______ ______  _____        _____ _______ __   __
-#                   |     \ |     | |_____/ |_____| |_____]   |   |        |      |      \_/
-#                   |_____/ |_____| |    \_ |     | |_____] __|__ |_____ __|__    |       |
+#______  _     _  ______ _______ ______  _____        _____ _______ __   __
+#|     \ |     | |_____/ |_____| |_____]   |   |        |      |      \_/
+#|_____/ |_____| |    \_ |     | |_____] __|__ |_____ __|__    |       |
 
 #States the damage an item does, depending on its durability.
 #It works like this: The calculation starts at 0%, then the first state ends, for example, at 20%,
@@ -17,9 +17,9 @@ percent_item_damaged:
     percent: 80
     reduced_damage: 40
 
-#       ______ _______ __   _ ______   _____  _______      _______ _______ _______ _______ _______ _______ _______
-#       |_____/ |_____| | \  | |     \ |     | |  |  |      |______ |______ |______ |______ |          |    |______
-#       |    \_ |     | |  \_| |_____/ |_____| |  |  |      |______ |       |       |______ |_____     |    ______|
+#______ _______ __   _ ______   _____  _______      _______ _______ _______ _______ _______ _______ _______
+#|_____/ |_____| | \  | |     \ |     | |  |  |      |______ |______ |______ |______ |          |    |______
+#|    \_ |     | |  \_| |_____/ |_____| |  |  |      |______ |       |       |______ |_____     |    ______|
 
 #!!! Currently, in early development (Experimental) !!!
 activate_random_effects: true
@@ -34,18 +34,51 @@ effect_settings:
   amplifier:
     max: 2
 
-#       _  _  _ _______ _______  _____   _____  __   _      _______  ______ _______ _______ _______ _____ __   _  ______
-#       |  |  | |______ |_____| |_____] |     | | \  |      |       |_____/ |_____| |______    |      |   | \  | |  ____
-#       |__|__| |______ |     | |       |_____| |  \_|      |_____  |    \_ |     | |          |    __|__ |  \_| |_____|
+#_  _  _ _______ _______  _____   _____  __   _      _______  ______ _______ _______ _______ _____ __   _  ______
+#|  |  | |______ |_____| |_____] |     | | \  |      |       |_____/ |_____| |______    |      |   | \  | |  ____
+#|__|__| |______ |     | |       |_____| |  \_|      |_____  |    \_ |     | |          |    __|__ |  \_| |_____|
 
-affected_weapon_items: [ WOODEN_SWORD, STONE_SWORD, GOLDEN_SWORD, IRON_SWORD, DIAMOND_SWORD, NETHERITE_SWORD, WOODEN_AXE, STONE_AXE, GOLDEN_AXE, IRON_AXE, DIAMOND_AXE, NETHERITE_AXE ]
+affected_weapon_items: [ WOODEN_SWORD, STONE_SWORD, GOLDEN_SWORD, IRON_SWORD, DIAMOND_SWORD, NETHERITE_SWORD, WOODEN_AXE, STONE_AXE, GOLDEN_AXE, IRON_AXE, DIAMOND_AXE,
+                         NETHERITE_AXE ]
 show_weapon_item_creator: true
 save_weapon_creator_in_nbt: true
 
-#       _______  ______ _______  _____   ______      _______  ______ _______ _______ _______ _____ __   _  ______
-#       |_____| |_____/ |  |  | |     |  |_____/      |       |_____/ |_____| |______    |      |   | \  | |  ____
-#       |     | |    \_ |  |  | |_____|  |    \_      |_____  |    \_ |     | |          |    __|__ |  \_| |_____|
+#_______  ______ _______  _____   ______      _______  ______ _______ _______ _______ _____ __   _  ______
+#|_____| |_____/ |  |  | |     |  |_____/      |       |_____/ |_____| |______    |      |   | \  | |  ____
+#|     | |    \_ |  |  | |_____|  |    \_      |_____  |    \_ |     | |          |    __|__ |  \_| |_____|
 
-affected_armor_items: [ LEATHER_HELMET, LEATHER_CHESTPLATE, LEATHER_LEGGINGS, LEATHER_BOOTS, GOLDEN_HELMET, GOLDEN_CHESTPLATE, GOLDEN_LEGGINGS, GOLDEN_BOOTS, IRON_HELMET, IRON_CHESTPLATE, IRON_LEGGINGS, IRON_BOOTS, DIAMOND_HELMET, DIAMOND_CHESTPLATE, DIAMOND_LEGGINGS, DIAMOND_BOOTS, NETHERITE_HELMET, NETHERITE_CHESTPLATE, NETHERITE_LEGGINGS, NETHERITE_BOOTS ]
+affected_armor_items: [ LEATHER_HELMET, LEATHER_CHESTPLATE, LEATHER_LEGGINGS, LEATHER_BOOTS, GOLDEN_HELMET, GOLDEN_CHESTPLATE, GOLDEN_LEGGINGS, GOLDEN_BOOTS, IRON_HELMET,
+                        IRON_CHESTPLATE, IRON_LEGGINGS, IRON_BOOTS, DIAMOND_HELMET, DIAMOND_CHESTPLATE, DIAMOND_LEGGINGS, DIAMOND_BOOTS, NETHERITE_HELMET,
+                        NETHERITE_CHESTPLATE, NETHERITE_LEGGINGS, NETHERITE_BOOTS, CHAINMAIL_HELMET, CHAINMAIL_CHESTPLATE, CHAINMAIL_LEGGINGS, CHAINMAIL_BOOTS ]
 show_armor_item_creator: true
 save_armor_creator_in_nbt: true
+
+# _______ _______ _______  ______ _____ ______  _     _ _______ _______ _______
+# |_____|    |       |    |_____/   |   |_____] |     |    |    |______ |______
+# |     |    |       |    |    \_ __|__ |_____] |_____|    |    |______ ______|
+
+armor_types:
+  leather_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.agility ]
+    negative_attributes: [ attribute.flamable ]
+  chainmail_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.gliding ]
+    negative_attributes: [ attribute.aHoleInTheWall ]
+  golden_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.pride ]
+    negative_attributes: [ attribute.soft ]
+  iron_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.hardShell ]
+    negative_attributes: [ attribute.slowing ]
+  diamond_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.pride, attribute.hardShell ]
+    negative_attributes: [ attribute.slowing ]
+  netherite_armor:
+    apply_attributes: true
+    positive_attributes: [ attribute.headShell, attribute.hotMetal ]
+    negative_attributes: [ attribute.slowing ]
