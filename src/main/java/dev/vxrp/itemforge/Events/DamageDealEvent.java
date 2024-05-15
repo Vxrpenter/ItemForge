@@ -2,6 +2,8 @@ package dev.vxrp.itemforge.Events;
 
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.CONFIG;
+import dev.vxrp.itemforge.util.DataStorage.PersistentDataStorageUtil;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
@@ -51,6 +53,7 @@ public class DamageDealEvent implements Listener {
                 damage = event.getDamage() - event.getDamage()*plugin.getConfig().getDouble(CONFIG.DAMAGE.DAMAGED_STATE_III_REDUCED_DAMAGE)/100;
                 event.setDamage(damage);
             }
+
             //Effects (Experimental)
             if (plugin.getConfig().getBoolean(CONFIG.EFFECTS.ACTIVATE_RANDOM_EFFECTS)) {
                 if (event.getEntity().getType() == EntityType.PLAYER) {
@@ -65,6 +68,7 @@ public class DamageDealEvent implements Listener {
                     int duration = ThreadLocalRandom.current().nextInt(plugin.getConfig().getInt(CONFIG.EFFECTS.DURATION_VALUE_I), plugin.getConfig().getInt(CONFIG.EFFECTS.DURATION_VALUE_II) + 1);
                     int amplifier = ThreadLocalRandom.current().nextInt(1, plugin.getConfig().getInt(CONFIG.EFFECTS.AMPLIFIER_MAX) + 1);
 
+                    assert effectType != null;
                     victim.addPotionEffect(new PotionEffect(effectType, duration, amplifier, false, false));
                 }
             }
