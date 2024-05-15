@@ -1,12 +1,10 @@
 package dev.vxrp.itemforge.util.DataStorage;
 
-import dev.vxrp.itemforge.util.CustomAttributes.CustomAttributeUtil;
 import org.bukkit.persistence.PersistentDataAdapterContext;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.ByteBuffer;
-import java.util.List;
 import java.util.UUID;
 
 public class UUIDPersistentDataType implements PersistentDataType<byte[], UUID> {

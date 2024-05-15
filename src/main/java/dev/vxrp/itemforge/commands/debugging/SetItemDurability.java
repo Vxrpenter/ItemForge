@@ -1,11 +1,9 @@
 package dev.vxrp.itemforge.commands.debugging;
 
-import dev.vxrp.itemforge.util.DataStorage.RetrieveStoredData;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
