@@ -47,7 +47,7 @@ public class ItemBuilder {
     private final List<Component> lore = new ArrayList<>();
     private final Set<ItemFlag> flags = new HashSet<>();
     private final Map<Enchantment, Integer> enchantments = new HashMap<>();
-    private Material material;
+    private final Material material;
     private Component displayName;
     private int amount;
     private short durability;
@@ -123,18 +123,6 @@ public class ItemBuilder {
         enchantments.putAll(builder.enchantments);
         save = builder.save;
         item.setItemMeta(meta);
-    }
-
-    /**
-     * Change the material of the item
-     *
-     * @param material The material to set
-     * @return The ItemBuilder
-     */
-    public ItemBuilder material(Material material) {
-        this.material = material;
-        item.setType(material);
-        return this;
     }
 
     /**
@@ -319,7 +307,7 @@ public class ItemBuilder {
     /**
      * Add some enchantments to the item by passing a Map in parameter
      *
-     * @param enchantments The Map of enchantements
+     * @param enchantments The Map of enchantments
      * @return The ItemBuilder
      */
     public ItemBuilder enchantment(Map<Enchantment, Integer> enchantments) {
@@ -332,7 +320,7 @@ public class ItemBuilder {
     /**
      * Add a single enchantment to the item
      *
-     * @param enchantment The enchantement to add
+     * @param enchantment The enchantment to add
      * @param level       The level of the enchantment
      * @return The ItemBuilder
      */
@@ -344,7 +332,7 @@ public class ItemBuilder {
     }
 
     /**
-     * Remove all enchantment from the item that match with the enchantement and the given level
+     * Remove all enchantments from the item that match with the enchantment and the given level
      *
      * @param enchantment The enchantment to remove
      * @param level       The level of the enchantment to remove
@@ -362,7 +350,7 @@ public class ItemBuilder {
     /**
      * Remove some enchantments from the item by a collection of enchantments given in parameter
      *
-     * @param enchantments The enchantements to remove
+     * @param enchantments The enchantments to remove
      * @return The ItemBuilder
      */
     public ItemBuilder removeEnchantments(Enchantment... enchantments) {
@@ -375,7 +363,7 @@ public class ItemBuilder {
     }
 
     /**
-     * Remove some enchantments from the item by a collection of level that match the enchantments given in parameter
+     * Remove some enchantments from the item by a collection of levels that match the enchantments given in parameter
      *
      * @param levels The levels of enchantments to remove
      * @return The ItemBuilder
