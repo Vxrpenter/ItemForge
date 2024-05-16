@@ -3,7 +3,6 @@ package dev.vxrp.itemforge.Events.crafting;
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.CONFIG;
 import dev.vxrp.itemforge.util.ItemGeneration;
-import net.kyori.adventure.text.Component;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
