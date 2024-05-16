@@ -2,28 +2,28 @@ package dev.vxrp.itemforge.Events.crafting;
 
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.CONFIG;
-import dev.vxrp.itemforge.util.CustomAttributes.CustomAttributesLoreUtil;
 import dev.vxrp.itemforge.util.ItemGeneration;
+import net.kyori.adventure.text.Component;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.PrepareItemCraftEvent;
+import org.bukkit.event.inventory.SmithItemEvent;
 import org.bukkit.inventory.ItemStack;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class PrepareCraftEvent implements Listener {
+public class SmithingEvent implements Listener {
     private final ItemForge plugin;
-    public PrepareCraftEvent(ItemForge itemForge) {
+    public SmithingEvent(ItemForge itemForge) {
         this.plugin = itemForge;
     }
     @EventHandler
-    public void onCraft(PrepareItemCraftEvent event) throws NullPointerException {
-        if (event.getInventory().getResult() == null) return;
-        ItemStack item = Objects.requireNonNull(event.getRecipe()).getResult();
+    public void onSmith(SmithItemEvent event) {
+        ItemStack item = event.getCurrentItem();
         //Weapon List Initialization
         List<String> listedWeaponItems = new ArrayList<>();
         for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.CRAFTING.AFFECTED_WEAPON_ITEMS)).size(); i++) {
@@ -37,17 +37,18 @@ public class PrepareCraftEvent implements Listener {
         }
 
         //Item Check
+        assert item != null;
         if (!listedWeaponItems.contains(item.getType().toString())) {
             if (listedArmorItems.contains(item.getType().toString())) {
                 //SetItem
                 for (HumanEntity he : event.getViewers()) {
-                    event.getInventory().setResult(ItemGeneration.armor(plugin,  CustomAttributesLoreUtil.removeLore(plugin, item).getType(), (Player) he));
+                    event.getInventory().setResult(ItemGeneration.armor(plugin, item.getType(), (Player) he));
                 }
             }
         } else {
             //SetItem
             for (HumanEntity he : event.getViewers()) {
-                event.getInventory().setResult(ItemGeneration.weapon(plugin, item.getType(), (Player) he));
+                event.getInventory().setResult(ItemGeneration.armor(plugin, item.getType(), (Player) he));
             }
         }
     }

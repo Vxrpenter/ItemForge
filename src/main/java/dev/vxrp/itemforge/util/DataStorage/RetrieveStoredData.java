@@ -10,7 +10,7 @@ public class RetrieveStoredData {
         ItemMeta itemMeta = item.getItemMeta();
         PersistentDataContainer container = itemMeta.getPersistentDataContainer();
 
-        if(container.has(key , UUIDPersistentDataType.STRING)) {
+        if(container.has(key, UUIDPersistentDataType.STRING)) {
             return container.get(key, UUIDPersistentDataType.STRING);
 
         }

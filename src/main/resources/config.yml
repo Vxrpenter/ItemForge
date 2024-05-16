@@ -78,5 +78,5 @@ armor_types:
     negative_attributes: [ attribute.slowing ]
   netherite_armor:
     apply_attributes: true
-    positive_attributes: [ attribute.headShell, attribute.hotMetal ]
+    positive_attributes: [ attribute.hardShell, attribute.hotMetal ]
     negative_attributes: [ attribute.slowing ]

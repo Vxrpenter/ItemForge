@@ -2,9 +2,8 @@ package dev.vxrp.itemforge.util;
 
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.CONFIG;
+import dev.vxrp.itemforge.util.CustomAttributes.CustomAttributesLoreUtil;
 import dev.vxrp.itemforge.util.DataStorage.PersistentDataStorageUtil;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
@@ -135,7 +134,7 @@ public class ItemGeneration {
 
         if (plugin.getConfig().getBoolean(CONFIG.CRAFTING.SAVE_ARMOR_CREATOR_IN_NBT)) {
             NamespacedKey key = new NamespacedKey(plugin, "player");
-            return new PersistentDataStorageUtil(item)
+            return new PersistentDataStorageUtil(CustomAttributesLoreUtil.addLore(plugin, item))
                     .addUUID(key, player.getUniqueId())
                     .build();
         } else {
