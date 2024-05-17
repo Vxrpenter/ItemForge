@@ -80,3 +80,18 @@ armor_types:
     apply_attributes: true
     positive_attributes: [ attribute.hardShell, attribute.hotMetal ]
     negative_attributes: [ attribute.slowing ]
+
+#Positive Attributes
+attribute_agility:
+attribute_pride:
+attribute_hard_shell:
+attribute_hot_metal:
+  time_until_damaging: 15
+  cooldown: 30
+attribute_gliding:
+
+#Negative Attributes
+attribute_flamable:
+attribute_slowing:
+attribute_soft:
+attribute_a_hole_in_the_wall:

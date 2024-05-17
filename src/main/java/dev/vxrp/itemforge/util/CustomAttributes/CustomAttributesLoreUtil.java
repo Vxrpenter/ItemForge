@@ -78,6 +78,8 @@ public class CustomAttributesLoreUtil {
             List<Component> lore = new ArrayList<>();
             //Positive Armor Attributes
             assert positiveAttributes != null;
+            lore.add(mm.deserialize("<gray>(<green>+<gray>) Advantages:"));
+            lore.add(Component.text(" "));
             if (positiveAttributes.contains("attribute.agility")) {
                 lore.addAll(agility());
                 lore.add(Component.text(" "));
@@ -100,6 +102,8 @@ public class CustomAttributesLoreUtil {
             }
             //Negative Armor Attributes
             assert negativeAttributes != null;
+            lore.add(mm.deserialize("<gray>(<red>-<gray>) Disadvantages:"));
+            lore.add(Component.text(" "));
             if (negativeAttributes.contains("attribute.flamable")) {
                 lore.addAll(flamable());
                 lore.add(Component.text(" "));

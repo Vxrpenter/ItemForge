@@ -54,5 +54,8 @@ public final class CONFIG {
         public final static String APPLY_IRON_ARMOR_ATTRIBUTES = "armor_types.iron_armor.apply_attributes";
         public final static String APPLY_DIAMOND_ARMOR_ATTRIBUTES = "armor_types.diamond_armor.apply_attributes";
         public final static String APPLY_NETHERITE_ARMOR_ATTRIBUTES = "armor_types.netherite_armor.apply_attributes";
+        //Positive Attributes Settings
+        public final static String ATTRIBUTE_HOT_METAL_TIME_UNTIL_DAMAGING = "attribute_hot_metal.time_until_damaging";
+        public final static String ATTRIBUTE_HOT_METAL_COOLDOWN = "attribute_hot_metal.cooldown";
     }
 }

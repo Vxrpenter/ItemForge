@@ -1,6 +1,8 @@
 package dev.vxrp.itemforge.util;
 
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,5 +55,14 @@ public class MaterialTypes {
         list.add(Material.NETHERITE_LEGGINGS);
         list.add(Material.NETHERITE_BOOTS);
         return list;
+    }
+
+    public static List<ItemStack> armor(Player player) {
+        List<ItemStack> armor = new ArrayList<>();
+        if (player.getInventory().getHelmet() != null) {armor.add(player.getInventory().getHelmet());}
+        if (player.getInventory().getChestplate() != null) {armor.add(player.getInventory().getChestplate());}
+        if (player.getInventory().getLeggings() != null) {armor.add(player.getInventory().getLeggings());}
+        if (player.getInventory().getBoots() != null) {armor.add(player.getInventory().getBoots());}
+        return armor;
     }
 }
