@@ -65,4 +65,15 @@ public class MaterialTypes {
         if (player.getInventory().getBoots() != null) {armor.add(player.getInventory().getBoots());}
         return armor;
     }
+
+    public static List<Material> swords() {
+        List<Material> list = new ArrayList<>();
+        list.add(Material.WOODEN_SWORD);
+        list.add(Material.STONE_SWORD);
+        list.add(Material.GOLDEN_SWORD);
+        list.add(Material.IRON_SWORD);
+        list.add(Material.DIAMOND_SWORD);
+        list.add(Material.NETHERITE_SWORD);
+        return list;
+    }
 }

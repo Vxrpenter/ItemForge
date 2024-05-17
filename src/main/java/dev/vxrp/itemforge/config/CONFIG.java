@@ -55,7 +55,11 @@ public final class CONFIG {
         public final static String APPLY_DIAMOND_ARMOR_ATTRIBUTES = "armor_types.diamond_armor.apply_attributes";
         public final static String APPLY_NETHERITE_ARMOR_ATTRIBUTES = "armor_types.netherite_armor.apply_attributes";
         //Positive Attributes Settings
+        public final static String ATTRIBUTE_AGILITY_SPEED_INCREASE = "attribute_agility.speed_increase";
         public final static String ATTRIBUTE_HOT_METAL_TIME_UNTIL_DAMAGING = "attribute_hot_metal.time_until_damaging";
         public final static String ATTRIBUTE_HOT_METAL_COOLDOWN = "attribute_hot_metal.cooldown";
+        public final static String ATTRIBUTE_PRIDE_STRENGHT_LEVEL = "attribute_pride.strenght_level";
+        public final static String ATTRIBUTE_HARD_SHELL_CHANCE_OF_AVOIDING = "attribute_hard_shell.chance_of_avoiding";
+        public final static String ATTRIBUTE_GLIDING_CHANCE_OF_AVOIDING = "attribute_gliding.chance_of_avoiding";
     }
 }

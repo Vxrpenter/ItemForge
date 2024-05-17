@@ -3,6 +3,7 @@ package dev.vxrp.itemforge.Events.attributes.Positive;
 import com.destroystokyo.paper.event.player.PlayerArmorChangeEvent;
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.ATTRIBUTES;
+import dev.vxrp.itemforge.config.CONFIG;
 import dev.vxrp.itemforge.util.DataStorage.RetrieveStoredData;
 import dev.vxrp.itemforge.util.MaterialTypes;
 import org.bukkit.NamespacedKey;
@@ -21,7 +22,8 @@ public class ArmorChangeEvent implements Listener {
     @EventHandler
     public void onChange(PlayerArmorChangeEvent event) {
         Player player = event.getPlayer();
-        PotionEffect effect = new PotionEffect(PotionEffectType.INCREASE_DAMAGE, PotionEffect.INFINITE_DURATION, 0, false, false);
+        int amplifier = plugin.getConfig().getInt(CONFIG.ATTRIBUTES.ATTRIBUTE_PRIDE_STRENGHT_LEVEL);
+        PotionEffect effect = new PotionEffect(PotionEffectType.INCREASE_DAMAGE, PotionEffect.INFINITE_DURATION, amplifier-1, false, false);
 
         if (Boolean.TRUE.equals(RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), new NamespacedKey(plugin, ATTRIBUTES.POSITIVE_ATTRIBUTES), ATTRIBUTES.POSITIVE.PRIDE))) {
             player.addPotionEffect(effect);

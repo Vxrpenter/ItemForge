@@ -83,12 +83,16 @@ armor_types:
 
 #Positive Attributes
 attribute_agility:
+  # WIP - speed_increase: 0.25
 attribute_pride:
+  strenght_level: 1
 attribute_hard_shell:
+  chance_of_avoiding: 25
 attribute_hot_metal:
   time_until_damaging: 15
   cooldown: 30
 attribute_gliding:
+  chance_of_avoiding: 35%
 
 #Negative Attributes
 attribute_flamable:

@@ -5,9 +5,7 @@ import dev.vxrp.itemforge.config.ATTRIBUTES;
 import dev.vxrp.itemforge.config.CONFIG;
 import dev.vxrp.itemforge.util.DataStorage.RetrieveStoredData;
 import dev.vxrp.itemforge.util.MaterialTypes;
-import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -31,6 +29,8 @@ public class DamageEntityEvent implements Listener {
         if (event.getEntityType() != EntityType.PLAYER) return;
         Player player = (Player) event.getEntity();
         EntityDamageEvent.DamageCause damageCause = event.getCause();
+
+        //Hot Metal
         if (damageCause == EntityDamageEvent.DamageCause.FIRE || damageCause == EntityDamageEvent.DamageCause.FIRE_TICK) {
             if (Boolean.TRUE.equals(RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), new NamespacedKey(plugin, ATTRIBUTES.POSITIVE_ATTRIBUTES), ATTRIBUTES.POSITIVE.HOT_METAL))) {
                 savedTime.putIfAbsent(player.getUniqueId(), System.currentTimeMillis());
@@ -51,7 +51,24 @@ public class DamageEntityEvent implements Listener {
             }
 
         }
+        //Hard Shell
+        if (damageCause == EntityDamageEvent.DamageCause.PROJECTILE) {
+            if (Boolean.TRUE.equals(RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), new NamespacedKey(plugin, ATTRIBUTES.POSITIVE_ATTRIBUTES), ATTRIBUTES.POSITIVE.HARD_SHELL))) {
+                if (!getChance(plugin.getConfig().getInt(CONFIG.ATTRIBUTES.ATTRIBUTE_HARD_SHELL_CHANCE_OF_AVOIDING))) return;
+                event.setCancelled(true);
+            }
+        }
+        //Gliding
+        if (damageCause == EntityDamageEvent.DamageCause.ENTITY_ATTACK || damageCause == EntityDamageEvent.DamageCause.ENTITY_SWEEP_ATTACK) {
+            if (!MaterialTypes.swords().contains(player.getInventory().getItemInMainHand().getType())) return;
+            if (Boolean.TRUE.equals(RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), new NamespacedKey(plugin, ATTRIBUTES.POSITIVE_ATTRIBUTES), ATTRIBUTES.POSITIVE.GLIDING))) {
+                if (!getChance(plugin.getConfig().getInt(CONFIG.ATTRIBUTES.ATTRIBUTE_GLIDING_CHANCE_OF_AVOIDING))) return;
+                event.setCancelled(true);
+            }
+        }
     }
-
-
+    public boolean getChance(int minimalChance) {
+        Random random = new Random();
+        return random.nextInt(99) + 1 >= minimalChance;
+    }
 }

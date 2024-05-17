@@ -2,6 +2,7 @@ package dev.vxrp.itemforge;
 
 import dev.vxrp.itemforge.Events.attributes.Positive.ArmorChangeEvent;
 import dev.vxrp.itemforge.Events.attributes.Positive.DamageEntityEvent;
+import dev.vxrp.itemforge.Events.attributes.Positive.MovementEvent;
 import dev.vxrp.itemforge.Events.crafting.CraftEvent;
 import dev.vxrp.itemforge.Events.DamageDealEvent;
 import dev.vxrp.itemforge.Events.PlayerJoinEvent;
@@ -39,5 +40,6 @@ public final class ItemForge extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PrepareSmithingEvent(this), this);
         getServer().getPluginManager().registerEvents(new DamageEntityEvent(this), this);
         getServer().getPluginManager().registerEvents(new ArmorChangeEvent(this), this);
+        getServer().getPluginManager().registerEvents(new MovementEvent(this), this);
     }
 }
