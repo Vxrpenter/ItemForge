@@ -22,15 +22,15 @@ public class RetrieveStoredData {
         return null;
     }
     public static Boolean retrieveAttributeExisting(List<ItemStack> itemStacks, NamespacedKey key, String attributeName) {
+        List<Boolean> booleans = new ArrayList<>();
         for (ItemStack itemStack : itemStacks) {
             ItemMeta itemMeta = itemStack.getItemMeta();
             PersistentDataContainer container = itemMeta.getPersistentDataContainer();
             String retrievedString = container.get(key, PersistentDataType.STRING);
             assert retrievedString != null;
             List<String> attributes = new ArrayList<String>(Arrays.asList(retrievedString.split(",")));
-
-            return attributes.contains(attributeName);
+            booleans.add(attributes.contains(attributeName));
         }
-        return null;
+        return booleans.contains(true);
     }
 }
