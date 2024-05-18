@@ -1,4 +1,4 @@
-package dev.vxrp.itemforge.Events;
+package dev.vxrp.itemforge.Listeners;
 
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.CONFIG;
@@ -18,9 +18,9 @@ import org.bukkit.potion.PotionEffectType;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class DamageDealEvent implements Listener {
+public class DamageDealListener implements Listener {
     private final ItemForge plugin;
-    public DamageDealEvent(ItemForge itemForge) {
+    public DamageDealListener(ItemForge itemForge) {
         this.plugin = itemForge;
     }
 

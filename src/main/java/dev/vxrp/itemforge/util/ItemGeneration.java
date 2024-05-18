@@ -2,8 +2,8 @@ package dev.vxrp.itemforge.util;
 
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.CONFIG;
-import dev.vxrp.itemforge.util.CustomAttributes.CustomAttributesLoreUtil;
-import dev.vxrp.itemforge.util.DataStorage.PersistentDataStorageUtil;
+import dev.vxrp.itemforge.util.customAttributes.CustomAttributesLoreUtil;
+import dev.vxrp.itemforge.util.dataStorage.PersistentDataStorageUtil;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;

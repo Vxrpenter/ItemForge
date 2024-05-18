@@ -1,7 +1,7 @@
-package dev.vxrp.itemforge.util.CustomAttributes;
+package dev.vxrp.itemforge.util.customAttributes;
 
 import dev.vxrp.itemforge.ItemForge;
-import dev.vxrp.itemforge.util.DataStorage.RetrieveStoredData;
+import dev.vxrp.itemforge.util.dataStorage.RetrieveStoredData;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.NamespacedKey;

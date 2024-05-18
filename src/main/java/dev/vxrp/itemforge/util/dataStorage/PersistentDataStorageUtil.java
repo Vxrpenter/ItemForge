@@ -1,4 +1,4 @@
-package dev.vxrp.itemforge.util.DataStorage;
+package dev.vxrp.itemforge.util.dataStorage;
 
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;

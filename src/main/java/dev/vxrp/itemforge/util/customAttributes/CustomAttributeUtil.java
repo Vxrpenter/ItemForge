@@ -1,4 +1,4 @@
-package dev.vxrp.itemforge.util.CustomAttributes;
+package dev.vxrp.itemforge.util.customAttributes;
 
 import java.util.List;
 

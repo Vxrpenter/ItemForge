@@ -1,4 +1,4 @@
-package dev.vxrp.itemforge.Events.debugging;
+package dev.vxrp.itemforge.Listeners.debugging;
 
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.commands.debugging.DebugInfo;
@@ -14,9 +14,9 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 
-public class DamageDealDebug implements Listener {
+public class DebugDamageDealListener implements Listener {
     private final ItemForge plugin;
-    public DamageDealDebug(ItemForge itemForge) {
+    public DebugDamageDealListener(ItemForge itemForge) {
         this.plugin = itemForge;
     }
     @EventHandler

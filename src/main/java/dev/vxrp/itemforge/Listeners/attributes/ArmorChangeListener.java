@@ -1,10 +1,10 @@
-package dev.vxrp.itemforge.Events.attributes.Positive;
+package dev.vxrp.itemforge.Listeners.attributes;
 
 import com.destroystokyo.paper.event.player.PlayerArmorChangeEvent;
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.ATTRIBUTES;
 import dev.vxrp.itemforge.config.CONFIG;
-import dev.vxrp.itemforge.util.DataStorage.RetrieveStoredData;
+import dev.vxrp.itemforge.util.dataStorage.RetrieveStoredData;
 import dev.vxrp.itemforge.util.MaterialTypes;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
@@ -13,9 +13,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class PositiveArmorChangeEvent implements Listener {
+public class ArmorChangeListener implements Listener {
     private final ItemForge plugin;
-    public PositiveArmorChangeEvent(ItemForge itemForge) {
+    public ArmorChangeListener(ItemForge itemForge) {
         this.plugin = itemForge;
     }
 
