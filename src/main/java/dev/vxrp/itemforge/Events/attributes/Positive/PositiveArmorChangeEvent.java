@@ -13,22 +13,27 @@ import org.bukkit.event.Listener;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class ArmorChangeEvent implements Listener {
+public class PositiveArmorChangeEvent implements Listener {
     private final ItemForge plugin;
-    public ArmorChangeEvent(ItemForge itemForge) {
+    public PositiveArmorChangeEvent(ItemForge itemForge) {
         this.plugin = itemForge;
     }
 
     @EventHandler
     public void onChange(PlayerArmorChangeEvent event) {
         Player player = event.getPlayer();
-        int amplifier = plugin.getConfig().getInt(CONFIG.ATTRIBUTES.ATTRIBUTE_PRIDE_STRENGHT_LEVEL);
-        PotionEffect effect = new PotionEffect(PotionEffectType.INCREASE_DAMAGE, PotionEffect.INFINITE_DURATION, amplifier-1, false, false);
+        int strenghtAmplifier = plugin.getConfig().getInt(CONFIG.ATTRIBUTES.ATTRIBUTE_PRIDE_STRENGHT_LEVEL);
+        int speedAmplifier = plugin.getConfig().getInt(CONFIG.ATTRIBUTES.ATTRIBUTE_AGILITY_SPEED_LEVEL);
 
         if (Boolean.TRUE.equals(RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), new NamespacedKey(plugin, ATTRIBUTES.POSITIVE_ATTRIBUTES), ATTRIBUTES.POSITIVE.PRIDE))) {
-            player.addPotionEffect(effect);
+            player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, PotionEffect.INFINITE_DURATION, strenghtAmplifier-1, false, false));
         } else {
             player.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
+        }
+        if (Boolean.TRUE.equals(RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), new NamespacedKey(plugin, ATTRIBUTES.POSITIVE_ATTRIBUTES), ATTRIBUTES.POSITIVE.AGILITY))) {
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, PotionEffect.INFINITE_DURATION, speedAmplifier-1, false, false));
+        } else {
+            player.removePotionEffect(PotionEffectType.SPEED);
         }
     }
 }

@@ -83,7 +83,7 @@ armor_types:
 
 #Positive Attributes
 attribute_agility:
-  # WIP - speed_increase: 0.25
+  speed_level: 1
 attribute_pride:
   strenght_level: 1
 attribute_hard_shell:
@@ -96,6 +96,7 @@ attribute_gliding:
 
 #Negative Attributes
 attribute_flamable:
+  damage_increase: 2
 attribute_slowing:
 attribute_soft:
 attribute_a_hole_in_the_wall:
