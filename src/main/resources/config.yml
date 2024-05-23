@@ -5,7 +5,6 @@
 #States the damage an item does, depending on its durability.
 #It works like this: The calculation starts at 0%, then the first state ends, for example, at 20%,
 #and so on
-#~ All values represent ' % ' of MaxHp/Damage
 percent_item_damaged:
   damaged_state_I:
     percent: 20
@@ -92,11 +91,14 @@ attribute_hot_metal:
   time_until_damaging: 15
   cooldown: 30
 attribute_gliding:
-  chance_of_avoiding: 35%
+  chance_of_avoiding: 35
 
 #Negative Attributes
 attribute_flamable:
   damage_increase: 2
 attribute_slowing:
+  slowness_level: 1
 attribute_soft:
+  #WIP
 attribute_a_hole_in_the_wall:
+  projectile_damage_increase: 50

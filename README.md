@@ -22,6 +22,30 @@ If there is, for example, only 20% left, the damage will be reduced by 40%.
 This calculation is actually
 fully customizable in the `config.yml`
 
+## Crafting Additions
+You are now able to craft chainmail armor using chains
+
+## Custom Item Attributes
+Currently only working for armors
+
+This adds multiple custom attributes to armors and tools, changing the experience you
+have using those items. There will be at least one negative and positive Attribute applied to every
+armor piece. Which armor pieces can get which attribute has to be defined in the config. 
+Below you can find the current attributes, there will be more soon.
+
+Advantages:
+- `Agility` | Makes you faster
+- `Pride` | Gives you strenght
+- `Hard Shell` | Provides a chance that projectiles bounce off you
+- `Hot Metal` | You are immune to fire for a customizable amount with a cooldown limiting this ability
+- `Gliding` | Swords have a chance to not hit you
+
+Disadvantages:
+- `Flamable` | You take more fire damage
+- `Slowing` | Slows you down
+- `Soft` | (Still WIP)
+- `A Hole in the Wall` | Projectiles do more damage
+
 ### Current Config
 ```ruby
 #______  _     _  ______ _______ ______  _____        _____ _______ __   __
@@ -31,7 +55,6 @@ fully customizable in the `config.yml`
 #States the damage an item does, depending on its durability.
 #It works like this: The calculation starts at 0%, then the first state ends, for example, at 20%,
 #and so on
-#~ All values represent ' % ' of MaxHp/Damage
 percent_item_damaged:
   damaged_state_I:
     percent: 20
@@ -104,8 +127,31 @@ armor_types:
     negative_attributes: [ attribute.slowing ]
   netherite_armor:
     apply_attributes: true
-    positive_attributes: [ attribute.headShell, attribute.hotMetal ]
+    positive_attributes: [ attribute.hardShell, attribute.hotMetal ]
     negative_attributes: [ attribute.slowing ]
+
+#Positive Attributes
+attribute_agility:
+  speed_level: 1
+attribute_pride:
+  strenght_level: 1
+attribute_hard_shell:
+  chance_of_avoiding: 25
+attribute_hot_metal:
+  time_until_damaging: 15
+  cooldown: 30
+attribute_gliding:
+  chance_of_avoiding: 35
+
+#Negative Attributes
+attribute_flamable:
+  damage_increase: 2
+attribute_slowing:
+  slowness_level: 1
+attribute_soft:
+  #WIP
+attribute_a_hole_in_the_wall:
+  projectile_damage_increase: 50
 ```
 
 ## Debugging Features

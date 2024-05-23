@@ -63,5 +63,7 @@ public final class CONFIG {
         public final static String ATTRIBUTE_GLIDING_CHANCE_OF_AVOIDING = "attribute_gliding.chance_of_avoiding";
         //Negative Attributes Settings
         public final static String ATTRIBUTE_FLAMABLE_DAMAGE_INCREASE = "attribute_flamable.damage_increase";
+        public final static String ATTRIBUTE_SLOWING_LEVEL = "attribute_slowing.slowness_level";
+        public final static String ATTRIBUTE_A_HOLE_IN_THE_WALL_PROJECTILE_DAMAGE_INCREASE = "attribute_a_hole_in_the_wall.projectile_damage_increase";
     }
 }

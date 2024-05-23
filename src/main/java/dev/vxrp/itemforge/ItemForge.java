@@ -1,8 +1,7 @@
 package dev.vxrp.itemforge;
 
-import dev.vxrp.itemforge.Listeners.attributes.DamageEntityListener;
 import dev.vxrp.itemforge.Listeners.attributes.ArmorChangeListener;
-import dev.vxrp.itemforge.Listeners.attributes.DamageEntityByEntityListener;
+import dev.vxrp.itemforge.Listeners.attributes.EntityDamageListener;
 import dev.vxrp.itemforge.Listeners.crafting.CraftListener;
 import dev.vxrp.itemforge.Listeners.DamageDealListener;
 import dev.vxrp.itemforge.Listeners.PlayerJoinListener;
@@ -38,8 +37,7 @@ public final class ItemForge extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PrepareCraftListener(this), this);
         getServer().getPluginManager().registerEvents(new SmithingListener(this), this);
         getServer().getPluginManager().registerEvents(new PrepareSmithingListener(this), this);
-        getServer().getPluginManager().registerEvents(new DamageEntityByEntityListener(this), this);
+        getServer().getPluginManager().registerEvents(new EntityDamageListener(this), this);
         getServer().getPluginManager().registerEvents(new ArmorChangeListener(this), this);
-        getServer().getPluginManager().registerEvents(new DamageEntityListener(this), this);
     }
 }

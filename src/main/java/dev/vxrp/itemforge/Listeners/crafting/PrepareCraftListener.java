@@ -1,9 +1,13 @@
 package dev.vxrp.itemforge.Listeners.crafting;
 
 import dev.vxrp.itemforge.ItemForge;
+import dev.vxrp.itemforge.config.ATTRIBUTES;
 import dev.vxrp.itemforge.config.CONFIG;
-import dev.vxrp.itemforge.util.customAttributes.CustomAttributesLoreUtil;
+import dev.vxrp.itemforge.util.attributes.CustomAttributesLore;
 import dev.vxrp.itemforge.util.ItemGeneration;
+import dev.vxrp.itemforge.util.peristentdatastorage.RetrieveStoredData;
+import net.kyori.adventure.text.Component;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -41,13 +45,15 @@ public class PrepareCraftListener implements Listener {
             if (listedArmorItems.contains(item.getType().toString())) {
                 //SetItem
                 for (HumanEntity he : event.getViewers()) {
-                    event.getInventory().setResult(ItemGeneration.armor(plugin,  CustomAttributesLoreUtil.removeLore(plugin, item).getType(), (Player) he));
+                    ItemStack preparedItem = ItemGeneration.armor(plugin, item.getType(), (Player) he);
+                    event.getInventory().setResult(CustomAttributesLore.addLore(plugin, preparedItem));
                 }
             }
         } else {
             //SetItem
             for (HumanEntity he : event.getViewers()) {
-                event.getInventory().setResult(ItemGeneration.weapon(plugin, item.getType(), (Player) he));
+                ItemStack preparedItem = ItemGeneration.weapon(plugin, item.getType(), (Player) he);
+                event.getInventory().setResult(CustomAttributesLore.addLore(plugin, preparedItem));
             }
         }
     }

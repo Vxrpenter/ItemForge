@@ -1,17 +1,16 @@
-package dev.vxrp.itemforge.util.customAttributes;
+package dev.vxrp.itemforge.util.attributes;
 
 import dev.vxrp.itemforge.ItemForge;
-import dev.vxrp.itemforge.util.dataStorage.RetrieveStoredData;
+import dev.vxrp.itemforge.util.peristentdatastorage.RetrieveStoredData;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
-public class CustomAttributesLoreUtil {
+public class CustomAttributesLore {
     public static MiniMessage mm = MiniMessage.miniMessage();
     //Positive Armor Attributes
     public static List<Component> agility() {
@@ -118,49 +117,6 @@ public class CustomAttributesLoreUtil {
             }
             if (negativeAttributes.contains("attribute.aHoleInTheWall")) {
                 lore.addAll(aHoleInTheWall());
-            }
-            item.lore(lore);
-            return item;
-        }
-        return item;
-    }
-
-    //Removing Lore
-    public static ItemStack removeLore(ItemForge plugin ,ItemStack item) {
-        String positiveAttributes = RetrieveStoredData.retrieveString(item, new NamespacedKey(plugin, "positive_attributes"));
-        String negativeAttributes = RetrieveStoredData.retrieveString(item, new NamespacedKey(plugin, "negative_attributes"));
-
-        if (positiveAttributes != null || negativeAttributes != null) {
-            List<Component> lore = item.lore();
-            assert lore != null;
-            //Positive Armor Attributes
-            if (new HashSet<>(lore).containsAll(agility())) {
-                lore.removeAll(agility());
-            }
-            if (new HashSet<>(lore).containsAll(pride())) {
-                lore.removeAll(pride());
-            }
-            if (new HashSet<>(lore).containsAll(hardShell())) {
-                lore.removeAll(hardShell());
-            }
-            if (new HashSet<>(lore).containsAll(hotMetal())) {
-                lore.removeAll(hotMetal());
-            }
-            if (new HashSet<>(lore).containsAll(gliding())) {
-                lore.removeAll(gliding());
-            }
-            //Negative Armor Attributes
-            if (new HashSet<>(lore).containsAll(flamable())) {
-                lore.removeAll(flamable());
-            }
-            if (new HashSet<>(lore).containsAll(slowing())) {
-                lore.removeAll(slowing());
-            }
-            if (new HashSet<>(lore).containsAll(soft())) {
-                lore.removeAll(soft());
-            }
-            if (new HashSet<>(lore).containsAll(aHoleInTheWall())) {
-                lore.removeAll(aHoleInTheWall());
             }
             item.lore(lore);
             return item;
