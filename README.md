@@ -2,7 +2,7 @@
 
 ## What is ItemForge
 ItemForge is a complete overhaul of a minecraft combat system.
-Or something like this, because rn this
+Or something like that, cause rn this
 is still an alpha version.
 With this plugin, I wanted to alter the way players fight, add some randomness
 and overall make combat more interesting.
