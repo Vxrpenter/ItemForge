@@ -1,8 +1,4 @@
-<div align="center">
-<a>
-<img src="assets/logo.png">
-</a>
-</div>
+<div align="center"><a><img src="assets/logo.png" alt="logo"></a></div>
 
 [<img alt="paper" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/paper_vector.svg">](https://www.papermc.io)
 <img alt="github" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg">
@@ -12,7 +8,9 @@
 <img alt="gradle" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/built-with/gradle_vector.svg">
 
 <img alt="forge" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/unsupported/forge_vector.svg"><img alt="fabric" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/unsupported/fabric_vector.svg">
-# About
+
+<div align="center"><a><img alt="about_separator" src="assets/about.png"></a></div>
+
 ## What is ItemForge
 ItemForge is a complete overhaul of a minecraft combat system.
 Or something like that, cause rn this
@@ -27,7 +25,8 @@ and overall make combat more interesting.
 - [ ] New Weapons
 - [ ] Wiki
 
-# Features
+<br>
+<div align="center"><a><img alt="features_separator" src="assets/features.png"></a></div>
 
 ## Damage Calculation
 Currently, the damage done by weapons is only manipulated by its durability.
@@ -61,8 +60,7 @@ Disadvantages:
 
 Example for attribute lore on items:
 ---
-<img width="300" height="300" src="assets/netherite_armor_normal.png"><img width="300" height="300" src="assets/netherite_armor_all.png">
-
+<img width="300" height="300" src="assets/netherite_armor_normal.png"><img width="350" height="300" src="assets/netherite_armor_all.png">
 ### Current Config
 [<img alt="readthedocs" height="40" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/documentation/readthedocs_vector.svg">](https://github.com/Vxrpenter/ItemForge/blob/master/src/main/resources/config.yml)
 
@@ -75,5 +73,4 @@ There are currently two different commands that help with debugging,
 | debuginfo         | show_damage_info | itemforge.debug.show_damage_info  | shows you various information like your current damage                                  |
 | setitemdurability | none             | itemforge.debug.setitemdurability | pretty self explanatory (if no number is put in shows you the items current durability) |
 
-> [!IMPORTANT]
-> This is still an alpha if not a pre-alpha, so don't expect too much
+<div align="center"><a><img alt="pre_alpha" width="600" height="50" src="assets/pre_alpha.png"></a></div>
