@@ -1,5 +1,20 @@
-# About
+<div align="center">
+<a>
+<img src="assets/logo.png">
+</a>
+</div>
 
+[<img alt="paper" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/paper_vector.svg">](https://www.papermc.io)
+<img alt="github" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg">
+[<img alt="modrinth" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg">](https://modrinth.com/project/itemforge)
+[<img alt="hangar" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/hangar_vector.svg">](https://hangar.papermc.io/Vxrpenter/ItemForge)
+<img alt="java17" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/built-with/java17_vector.svg">
+<img alt="gradle" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/built-with/gradle_vector.svg">
+
+<img alt="forge" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/unsupported/forge_vector.svg">
+<img alt="fabric" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/unsupported/fabric_vector.svg">
+
+# About
 ## What is ItemForge
 ItemForge is a complete overhaul of a minecraft combat system.
 Or something like that, cause rn this
@@ -46,113 +61,13 @@ Disadvantages:
 - `Soft` | (Still WIP)
 - `A Hole in the Wall` | Projectiles do more damage
 
+Example for attribute lore on items:
+---
+<img width="300" height="300" src="assets/netherite_armor_normal.png">
+<img width="300" height="300" src="assets/netherite_armor_all.png">
+
 ### Current Config
-```ruby
-#______  _     _  ______ _______ ______  _____        _____ _______ __   __
-#|     \ |     | |_____/ |_____| |_____]   |   |        |      |      \_/
-#|_____/ |_____| |    \_ |     | |_____] __|__ |_____ __|__    |       |
-
-#States the damage an item does, depending on its durability.
-#It works like this: The calculation starts at 0%, then the first state ends, for example, at 20%,
-#and so on
-percent_item_damaged:
-  damaged_state_I:
-    percent: 20
-    reduced_damage: 20
-  damaged_state_II:
-    percent: 50
-    reduced_damage: 30
-  damaged_state_III:
-    percent: 80
-    reduced_damage: 40
-
-#______ _______ __   _ ______   _____  _______      _______ _______ _______ _______ _______ _______ _______
-#|_____/ |_____| | \  | |     \ |     | |  |  |      |______ |______ |______ |______ |          |    |______
-#|    \_ |     | |  \_| |_____/ |_____| |  |  |      |______ |       |       |______ |_____     |    ______|
-
-#!!! Currently, in early development (Experimental) !!!
-activate_random_effects: true
-random_effects:
-  - POISON
-  - WITHER
-
-effect_settings:
-  duration:
-    value_I: 1
-    value_II: 5
-  amplifier:
-    max: 2
-
-#_  _  _ _______ _______  _____   _____  __   _      _______  ______ _______ _______ _______ _____ __   _  ______
-#|  |  | |______ |_____| |_____] |     | | \  |      |       |_____/ |_____| |______    |      |   | \  | |  ____
-#|__|__| |______ |     | |       |_____| |  \_|      |_____  |    \_ |     | |          |    __|__ |  \_| |_____|
-
-affected_weapon_items: [ WOODEN_SWORD, STONE_SWORD, GOLDEN_SWORD, IRON_SWORD, DIAMOND_SWORD, NETHERITE_SWORD, WOODEN_AXE, STONE_AXE, GOLDEN_AXE, IRON_AXE, DIAMOND_AXE,
-                         NETHERITE_AXE ]
-save_weapon_creator_in_nbt: true
-
-#_______  ______ _______  _____   ______      _______  ______ _______ _______ _______ _____ __   _  ______
-#|_____| |_____/ |  |  | |     |  |_____/      |       |_____/ |_____| |______    |      |   | \  | |  ____
-#|     | |    \_ |  |  | |_____|  |    \_      |_____  |    \_ |     | |          |    __|__ |  \_| |_____|
-
-affected_armor_items: [ LEATHER_HELMET, LEATHER_CHESTPLATE, LEATHER_LEGGINGS, LEATHER_BOOTS, GOLDEN_HELMET, GOLDEN_CHESTPLATE, GOLDEN_LEGGINGS, GOLDEN_BOOTS, IRON_HELMET,
-                        IRON_CHESTPLATE, IRON_LEGGINGS, IRON_BOOTS, DIAMOND_HELMET, DIAMOND_CHESTPLATE, DIAMOND_LEGGINGS, DIAMOND_BOOTS, NETHERITE_HELMET,
-                        NETHERITE_CHESTPLATE, NETHERITE_LEGGINGS, NETHERITE_BOOTS, CHAINMAIL_HELMET, CHAINMAIL_CHESTPLATE, CHAINMAIL_LEGGINGS, CHAINMAIL_BOOTS ]
-save_armor_creator_in_nbt: true
-
-# _______ _______ _______  ______ _____ ______  _     _ _______ _______ _______
-# |_____|    |       |    |_____/   |   |_____] |     |    |    |______ |______
-# |     |    |       |    |    \_ __|__ |_____] |_____|    |    |______ ______|
-
-armor_types:
-  leather_armor:
-    apply_attributes: true
-    positive_attributes: [ attribute.agility ]
-    negative_attributes: [ attribute.flamable ]
-  chainmail_armor:
-    apply_attributes: true
-    positive_attributes: [ attribute.gliding ]
-    negative_attributes: [ attribute.aHoleInTheWall ]
-  golden_armor:
-    apply_attributes: true
-    positive_attributes: [ attribute.pride ]
-    negative_attributes: [ attribute.soft ]
-  iron_armor:
-    apply_attributes: true
-    positive_attributes: [ attribute.hardShell ]
-    negative_attributes: [ attribute.slowing ]
-  diamond_armor:
-    apply_attributes: true
-    positive_attributes: [ attribute.pride, attribute.hardShell ]
-    negative_attributes: [ attribute.slowing ]
-  netherite_armor:
-    apply_attributes: true
-    positive_attributes: [ attribute.hardShell, attribute.hotMetal ]
-    negative_attributes: [ attribute.slowing ]
-
-#Positive Attributes
-attribute_agility:
-  speed_level: 1
-attribute_pride:
-  strenght_level: 1
-attribute_hard_shell:
-  chance_of_avoiding: 25
-attribute_hot_metal:
-  time_until_damaging: 15
-  cooldown: 30
-attribute_gliding:
-  chance_of_avoiding: 35
-
-#Negative Attributes
-attribute_flamable:
-  damage_increase: 2
-attribute_slowing:
-  slowness_level: 1
-attribute_soft:
-  #WIP
-attribute_a_hole_in_the_wall:
-  projectile_damage_increase: 50
-```
+[<img alt="readthedocs" height="40" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/documentation/readthedocs_vector.svg">](https://github.com/Vxrpenter/ItemForge/blob/master/src/main/resources/config.yml)
 
 ## Debugging Features
 There are currently two different commands that help with debugging,
