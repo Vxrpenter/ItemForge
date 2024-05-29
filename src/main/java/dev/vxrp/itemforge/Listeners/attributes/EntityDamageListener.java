@@ -3,9 +3,8 @@ package dev.vxrp.itemforge.Listeners.attributes;
 import dev.vxrp.itemforge.ItemForge;
 import dev.vxrp.itemforge.config.ATTRIBUTES;
 import dev.vxrp.itemforge.config.CONFIG;
-import dev.vxrp.itemforge.util.peristentdatastorage.RetrieveStoredData;
+import dev.vxrp.itemforge.util.peristentdatastorage.PersistentDataStorageUtil;
 import dev.vxrp.itemforge.util.MaterialTypes;
-import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.EntityType;
@@ -38,7 +37,7 @@ public class EntityDamageListener implements Listener {
 
         //Hot Metal
         if (damageCause == EntityDamageEvent.DamageCause.FIRE || damageCause == EntityDamageEvent.DamageCause.FIRE_TICK) {
-            if (Boolean.TRUE.equals(RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), positiveKey, ATTRIBUTES.POSITIVE.HOT_METAL))) {
+            if (Boolean.TRUE.equals(PersistentDataStorageUtil.RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), positiveKey, ATTRIBUTES.POSITIVE.HOT_METAL))) {
                 savedTime.putIfAbsent(player.getUniqueId(), System.currentTimeMillis());
                 lastDamage.putIfAbsent(player.getUniqueId(), System.currentTimeMillis());
 
@@ -59,26 +58,26 @@ public class EntityDamageListener implements Listener {
         }
         if (damageCause == EntityDamageEvent.DamageCause.PROJECTILE) {
             //Hard Shell
-            if (Boolean.TRUE.equals(RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), positiveKey, ATTRIBUTES.POSITIVE.HARD_SHELL))) {
+            if (Boolean.TRUE.equals(PersistentDataStorageUtil.RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), positiveKey, ATTRIBUTES.POSITIVE.HARD_SHELL))) {
                 if (random.nextInt(99) + 1 < plugin.getConfig().getInt(CONFIG.ATTRIBUTES.ATTRIBUTE_HARD_SHELL_CHANCE_OF_AVOIDING)) return;
                 event.setCancelled(true);
             }
             //A Hole In The Wall
-            if (Boolean.TRUE.equals(RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), negativeKey, ATTRIBUTES.NEGATIVE.A_HOLE_I_THE_WALL))) {
+            if (Boolean.TRUE.equals(PersistentDataStorageUtil.RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), negativeKey, ATTRIBUTES.NEGATIVE.A_HOLE_I_THE_WALL))) {
                 event.setDamage(event.getDamage()+event.getDamage()*plugin.getConfig().getDouble(CONFIG.ATTRIBUTES.ATTRIBUTE_A_HOLE_IN_THE_WALL_PROJECTILE_DAMAGE_INCREASE)/100);
             }
         }
         //Gliding
         if (damageCause == EntityDamageEvent.DamageCause.ENTITY_ATTACK || damageCause == EntityDamageEvent.DamageCause.ENTITY_SWEEP_ATTACK) {
             if (!MaterialTypes.swords().contains(player.getInventory().getItemInMainHand().getType())) return;
-            if (Boolean.TRUE.equals(RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), positiveKey, ATTRIBUTES.POSITIVE.GLIDING))) {
+            if (Boolean.TRUE.equals(PersistentDataStorageUtil.RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), positiveKey, ATTRIBUTES.POSITIVE.GLIDING))) {
                 if (random.nextInt(99) + 1 < plugin.getConfig().getInt(CONFIG.ATTRIBUTES.ATTRIBUTE_GLIDING_CHANCE_OF_AVOIDING)) return;
                 event.setCancelled(true);
             }
         }
         //Flamable
         if (damageCause == EntityDamageEvent.DamageCause.FIRE || damageCause == EntityDamageEvent.DamageCause.FIRE_TICK) {
-            if (Boolean.TRUE.equals(RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), negativeKey, ATTRIBUTES.NEGATIVE.FLAMABLE))) {
+            if (Boolean.TRUE.equals(PersistentDataStorageUtil.RetrieveStoredData.retrieveAttributeExisting(MaterialTypes.armor(player), negativeKey, ATTRIBUTES.NEGATIVE.FLAMABLE))) {
                 event.setDamage(event.getDamage()*plugin.getConfig().getDouble(CONFIG.ATTRIBUTES.ATTRIBUTE_FLAMABLE_DAMAGE_INCREASE));
             }
         }

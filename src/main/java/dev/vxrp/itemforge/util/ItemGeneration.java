@@ -34,101 +34,23 @@ public class ItemGeneration {
         //Attributes
         NamespacedKey negativeAttributeKey = new NamespacedKey(plugin, "negative_attributes");
         NamespacedKey positiveAttributeKey = new NamespacedKey(plugin, "positive_attributes");
-        if (MaterialTypes.leather_armor().contains(item.getType())) {
-            if (plugin.getConfig().getBoolean(CONFIG.ATTRIBUTES.APPLY_LEATHER_ARMOR_ATTRIBUTES)) {
-                //Positive
-                List<String> positive = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.LEATHER_ARMOR_POSITIVE_ATTRIBUTES)).size(); i++) {
-                    positive.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.LEATHER_ARMOR_POSITIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(positiveAttributeKey, PersistentDataType.STRING , String.join(",", positive));
-                //Negative
-                List<String> negative = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.LEATHER_ARMOR_NEGATIVE_ATTRIBUTES)).size(); i++) {
-                    negative.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.LEATHER_ARMOR_NEGATIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(negativeAttributeKey, PersistentDataType.STRING , String.join(",", negative));
-            }
-        }
-        if (MaterialTypes.chainmail_armor().contains(item.getType())) {
-            if (plugin.getConfig().getBoolean(CONFIG.ATTRIBUTES.APPLY_CHAINMAIL_ARMOR_ATTRIBUTES)) {
-                //Positive
-                List<String> positive = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.CHAINMAIL_ARMOR_POSITIVE_ATTRIBUTES)).size(); i++) {
-                    positive.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.CHAINMAIL_ARMOR_POSITIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(positiveAttributeKey, PersistentDataType.STRING , String.join(",", positive));
-                //Negative
-                List<String> negative = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.CHAINMAIL_ARMOR_NEGATIVE_ATTRIBUTES)).size(); i++) {
-                    negative.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.CHAINMAIL_ARMOR_NEGATIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(negativeAttributeKey, PersistentDataType.STRING , String.join(",", negative));
-            }
-        }
-        if (MaterialTypes.golden_armor().contains(item.getType())) {
-            if (plugin.getConfig().getBoolean(CONFIG.ATTRIBUTES.APPLY_GOLDEN_ARMOR_ATTRIBUTES)) {
-                //Positive
-                List<String> positive = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.GOLDEN_ARMOR_POSITIVE_ATTRIBUTES)).size(); i++) {
-                    positive.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.GOLDEN_ARMOR_POSITIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(positiveAttributeKey, PersistentDataType.STRING , String.join(",", positive));
-                //Negative
-                List<String> negative = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.GOLDEN_ARMOR_NEGATIVE_ATTRIBUTES)).size(); i++) {
-                    negative.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.GOLDEN_ARMOR_NEGATIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(negativeAttributeKey, PersistentDataType.STRING , String.join(",", negative));
-            }
-        }
-        if (MaterialTypes.iron_armor().contains(item.getType())) {
-            if (plugin.getConfig().getBoolean(CONFIG.ATTRIBUTES.APPLY_IRON_ARMOR_ATTRIBUTES)) {
-                //Positive
-                List<String> positive = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.IRON_ARMOR_POSITIVE_ATTRIBUTES)).size(); i++) {
-                    positive.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.IRON_ARMOR_POSITIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(positiveAttributeKey, PersistentDataType.STRING , String.join(",", positive));
-                //Negative
-                List<String> negative = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.IRON_ARMOR_NEGATIVE_ATTRIBUTES)).size(); i++) {
-                    negative.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.IRON_ARMOR_NEGATIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(negativeAttributeKey, PersistentDataType.STRING , String.join(",", negative));
-            }
-        }
-        if (MaterialTypes.diamond_armor().contains(item.getType())) {
-            if (plugin.getConfig().getBoolean(CONFIG.ATTRIBUTES.APPLY_DIAMOND_ARMOR_ATTRIBUTES)) {
-                //Positive
-                List<String> positive = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.DIAMOND_ARMOR_POSITIVE_ATTRIBUTES)).size(); i++) {
-                    positive.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.DIAMOND_ARMOR_POSITIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(positiveAttributeKey, PersistentDataType.STRING , String.join(",", positive));
-                //Negative
-                List<String> negative = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.DIAMOND_ARMOR_NEGATIVE_ATTRIBUTES)).size(); i++) {
-                    negative.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.DIAMOND_ARMOR_NEGATIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(negativeAttributeKey, PersistentDataType.STRING , String.join(",", negative));
-            }
-        }
-        if (MaterialTypes.netherite_armor().contains(item.getType())) {
-            if (plugin.getConfig().getBoolean(CONFIG.ATTRIBUTES.APPLY_NETHERITE_ARMOR_ATTRIBUTES)) {
-                //Positive
-                List<String> positive = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.NETHERITE_ARMOR_POSITIVE_ATTRIBUTES)).size(); i++) {
-                    positive.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.NETHERITE_ARMOR_POSITIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(positiveAttributeKey, PersistentDataType.STRING , String.join(",", positive));
-                //Negative
-                List<String> negative = new ArrayList<>();
-                for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.NETHERITE_ARMOR_NEGATIVE_ATTRIBUTES)).size(); i++) {
-                    negative.add((String) Objects.requireNonNull(plugin.getConfig().getList(CONFIG.ATTRIBUTES.NETHERITE_ARMOR_NEGATIVE_ATTRIBUTES)).get(i));
-                }
-                itemMeta.getPersistentDataContainer().set(negativeAttributeKey, PersistentDataType.STRING , String.join(",", negative));
-            }
+        //Attributes saved on items
+            //Positive
+            List<String> positive = new ArrayList<>();
+            String itemGroup = MaterialTypes.returnArmorGroup(item.getType());
+            for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList("armor_types."+itemGroup+".positive_attributes")).size(); i++) {
+                positive.add((String) Objects.requireNonNull(plugin.getConfig().getList("armor_types."+itemGroup+".positive_attributes")).get(i));}
+            //Negative
+            List<String> negative = new ArrayList<>();
+            for (int i = 0; i < Objects.requireNonNull(plugin.getConfig().getList("armor_types."+itemGroup+".negative_attributes")).size(); i++) {
+                negative.add((String) Objects.requireNonNull(plugin.getConfig().getList("armor_types."+itemGroup+".negative_attributes")).get(i));}
+        //Applying
+        if (plugin.getConfig().getBoolean("armor_types."+itemGroup+".apply_attributes")) {
+            if (!MaterialTypes.containsArmor(item.getType())) return item;
+            //Positive
+            itemMeta.getPersistentDataContainer().set(positiveAttributeKey, PersistentDataType.STRING , String.join(",", positive));
+            //Negative
+            itemMeta.getPersistentDataContainer().set(negativeAttributeKey, PersistentDataType.STRING , String.join(",", negative));
         }
         item.setItemMeta(itemMeta);
 

@@ -1,7 +1,7 @@
 package dev.vxrp.itemforge.commands.debugging;
 
 import dev.vxrp.itemforge.ItemForge;
-import dev.vxrp.itemforge.util.peristentdatastorage.RetrieveStoredData;
+import dev.vxrp.itemforge.util.peristentdatastorage.PersistentDataStorageUtil;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -48,9 +48,9 @@ public class DebugInfo implements CommandExecutor {
                 player.sendMessage(Component.text(" "));
                 player.sendMessage(MiniMessage.miniMessage().deserialize("<gray>Item: <red>" + player.getInventory().getItemInMainHand().getType()));
                 player.sendMessage(Component.text(" "));
-                player.sendMessage(MiniMessage.miniMessage().deserialize("<gray>Positive Attributes: <red>" + RetrieveStoredData.retrieveString(player.getInventory().getItemInMainHand(),
+                player.sendMessage(MiniMessage.miniMessage().deserialize("<gray>Positive Attributes: <red>" + PersistentDataStorageUtil.RetrieveStoredData.retrieveString(player.getInventory().getItemInMainHand(),
                         new NamespacedKey(plugin, "positive_attributes"))));
-                player.sendMessage(MiniMessage.miniMessage().deserialize("<gray>Negative Attributes: <red>" + RetrieveStoredData.retrieveString(player.getInventory().getItemInMainHand(),
+                player.sendMessage(MiniMessage.miniMessage().deserialize("<gray>Negative Attributes: <red>" + PersistentDataStorageUtil.RetrieveStoredData.retrieveString(player.getInventory().getItemInMainHand(),
                         new NamespacedKey(plugin, "negative_attributes"))));
             }
         }

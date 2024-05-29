@@ -1,13 +1,9 @@
 package dev.vxrp.itemforge.Listeners.crafting;
 
 import dev.vxrp.itemforge.ItemForge;
-import dev.vxrp.itemforge.config.ATTRIBUTES;
 import dev.vxrp.itemforge.config.CONFIG;
 import dev.vxrp.itemforge.util.attributes.CustomAttributesLore;
 import dev.vxrp.itemforge.util.ItemGeneration;
-import dev.vxrp.itemforge.util.peristentdatastorage.RetrieveStoredData;
-import net.kyori.adventure.text.Component;
-import org.bukkit.NamespacedKey;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
