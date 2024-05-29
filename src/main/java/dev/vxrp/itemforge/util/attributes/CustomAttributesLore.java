@@ -47,50 +47,88 @@ public class CustomAttributesLore {
         String negativeAttributes = PersistentDataStorageUtil.RetrieveStoredData.retrieveString(item, new NamespacedKey(plugin, "negative_attributes"));
 
         if (positiveAttributes != null || negativeAttributes != null) {
+            assert positiveAttributes != null;
+            assert negativeAttributes != null;
+            List<String> posAttributes = new ArrayList<>(Arrays.asList(positiveAttributes.split(",")));
+            List<String> negAttributes = new ArrayList<>(Arrays.asList(negativeAttributes.split(",")));
             //Lore list
             List<Component> lore = new ArrayList<>();
             //Positive Armor Attributes
-            assert positiveAttributes != null;
             lore.add(mm.deserialize("<gray>(<green>+<gray>) Advantages:"));
             lore.add(Component.text(" "));
             if (positiveAttributes.contains("attribute.agility")) {
-                lore.addAll(agility());
-                lore.add(Component.text(" "));
+                if (posAttributes.size() > 3 || negAttributes.size() > 3) {
+                    lore.add(mm.deserialize("<yellow>Agility <gray>- extra speed"));
+                } else {
+                    lore.addAll(agility());
+                    lore.add(Component.text(" "));
+                }
             }
             if (positiveAttributes.contains("attribute.pride")) {
-                lore.addAll(pride());
-                lore.add(Component.text(" "));
+                if (posAttributes.size() > 3 || negAttributes.size() > 3) {
+                    lore.add(mm.deserialize("<color:#ffd700>Pride <gray>- extra strenght"));
+                } else {
+                    lore.addAll(pride());
+                    lore.add(Component.text(" "));
+                }
             }
             if (positiveAttributes.contains("attribute.hardShell")) {
-                lore.addAll(hardShell());
-                lore.add(Component.text(" "));
+                if (posAttributes.size() > 3 || negAttributes.size() > 3) {
+                    lore.add(mm.deserialize("<color:#bf5d37>Hard Shell <gray>- chance to avoid projectiles"));
+                } else {
+                    lore.addAll(hardShell());
+                    lore.add(Component.text(" "));
+                }
             }
             if (positiveAttributes.contains("attribute.hotMetal")) {
-                lore.addAll(hotMetal());
-                lore.add(Component.text(" "));
+                if (posAttributes.size() > 3 || negAttributes.size() > 3) {
+                    lore.add(mm.deserialize("<red>Hot Metal <gray>- chance to avoid fire damage"));
+                } else {
+                    lore.addAll(hotMetal());
+                    lore.add(Component.text(" "));
+                }
             }
             if (positiveAttributes.contains("attribute.gliding")) {
-                lore.addAll(gliding());
+                if (posAttributes.size() > 3 || negAttributes.size() > 3) {
+                    lore.add(mm.deserialize("<white>Gliding <gray>- chance to avoid sword hits"));
+                } else {
+                    lore.addAll(gliding());
+                }
                 lore.add(Component.text(" "));
             }
             //Negative Armor Attributes
-            assert negativeAttributes != null;
             lore.add(mm.deserialize("<gray>(<red>-<gray>) Disadvantages:"));
             lore.add(Component.text(" "));
             if (negativeAttributes.contains("attribute.flamable")) {
-                lore.addAll(flamable());
-                lore.add(Component.text(" "));
+                if (posAttributes.size() > 3 || negAttributes.size() > 3) {
+                    lore.add(mm.deserialize("<color:#ffa500>Flamable <gray>- extra fire damage"));
+                } else {
+                    lore.addAll(flamable());
+                    lore.add(Component.text(" "));
+                }
             }
             if (negativeAttributes.contains("attribute.slowing")) {
-                lore.addAll(slowing());
-                lore.add(Component.text(" "));
+                if (posAttributes.size() > 3 || negAttributes.size() > 3) {
+                    lore.add(mm.deserialize("<color:#2a2a2a>Slowing <gray>- extra slowness"));
+                } else {
+                    lore.addAll(slowing());
+                    lore.add(Component.text(" "));
+                }
             }
             if (negativeAttributes.contains("attribute.soft")) {
-                lore.addAll(soft());
-                lore.add(Component.text(" "));
+                if (posAttributes.size() > 3 || negAttributes.size() > 3) {
+                    lore.add(mm.deserialize("<color:#fa8072>Soft <gray>- you are more fragile"));
+                } else {
+                    lore.addAll(soft());
+                    lore.add(Component.text(" "));
+                }
             }
             if (negativeAttributes.contains("attribute.aHoleInTheWall")) {
-                lore.addAll(aHoleInTheWall());
+                if (posAttributes.size() > 3 || negAttributes.size() > 3) {
+                    lore.add(mm.deserialize("<color:#a52a2a>A Hole in the Wall <gray>- projectiles do more damage"));
+                } else {
+                    lore.addAll(aHoleInTheWall());
+                }
             }
             item.lore(lore);
             return item;
