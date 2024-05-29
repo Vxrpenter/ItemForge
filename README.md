@@ -12,7 +12,6 @@
 <img alt="gradle" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/built-with/gradle_vector.svg">
 
 <img alt="forge" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/unsupported/forge_vector.svg"><img alt="fabric" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/unsupported/fabric_vector.svg">
-
 # About
 ## What is ItemForge
 ItemForge is a complete overhaul of a minecraft combat system.
@@ -28,7 +27,7 @@ and overall make combat more interesting.
 - [ ] New Weapons
 - [ ] Wiki
 
-# Already Existing Features
+# Features
 
 ## Damage Calculation
 Currently, the damage done by weapons is only manipulated by its durability.
@@ -62,8 +61,7 @@ Disadvantages:
 
 Example for attribute lore on items:
 ---
-<img width="300" height="300" src="assets/netherite_armor_normal.png">
-<img width="300" height="300" src="assets/netherite_armor_all.png">
+<img width="300" height="300" src="assets/netherite_armor_normal.png"><img width="300" height="300" src="assets/netherite_armor_all.png">
 
 ### Current Config
 [<img alt="readthedocs" height="40" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/documentation/readthedocs_vector.svg">](https://github.com/Vxrpenter/ItemForge/blob/master/src/main/resources/config.yml)
